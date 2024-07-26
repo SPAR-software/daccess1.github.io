@@ -474,6 +474,13 @@
     padding: 17px;
     background-color: #01290F;
     margin-bottom: 7px;
+
+    &--correct {
+      background-color: #ff8e04;
+    }
+    &--wrong {
+      background-color: red;
+    }
   }
 }
 .activesContent--preloader {

@@ -176,7 +176,6 @@ async function loadActivesPage(tab = 'round', reload = false) {
 
     }
 
-
     if (dailyData) {
         try {
             dailyBonus = dailyData.reward;
@@ -185,6 +184,32 @@ async function loadActivesPage(tab = 'round', reload = false) {
             daily_active = true;
         } catch (ex) {
 
+        }
+
+        if (dailyData.has_answered) {
+            if (dailyData.correct_answer === dailyData.user_answer) {
+                for (let i = 0; i < 3; i++) {
+                    const answer = dailyData.answers[i];
+
+                    if (answer.id === dailyData.correct_answer) {
+                        answer.cssClass = 'activesModalDaily--answer--correct';
+                    } else {
+                        answer.cssClass = '';
+                    }
+                }
+            } else {
+                for (let i = 0; i < 3; i++) {
+                    const answer = dailyData.answers[i];
+
+                    if (answer.id === dailyData.correct_answer) {
+                        answer.cssClass = 'activesModalDaily--answer--correct';
+                    } else if (answer.id === dailyData.user_answer) {
+                        answer.cssClass = 'activesModalDaily--answer--wrong';
+                    } else {
+                        answer.cssClass = '';
+                    }
+                }
+            }
         }
     }
 

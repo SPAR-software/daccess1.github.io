@@ -142,26 +142,31 @@ async function upgradeRequest(id) {
 }
 
 async function dailyAnswerClick(el) {
-    const answer = el.dataset.answer;
+    const answerId = parseInt(el.dataset.id);
 
     const response = await backendAPIRequest(`/player/${_tg_user.id}/daily`, 'post', {
-        value: answer
+        id: answerId
     });
 
-    if (response.body === '"wrong answer"') {
-        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_wrong ;
+    if (response.status === 400 && response.error === `{"status":"error","message":"You have already answered today's question."}`) {
+        document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_repeated;
         _toast.show();
-    } else {
-        if (response.status === 400 && response.error === '{"status":"error","message":"sorry mr. Abuser, you cannot answer again today"}') {
-            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_repeated;
-            _toast.show();
-        } else if (response.status === 200) {
-            _toast.hide();
+    } else if (response.status === 200) {
+        const data = JSON.parse(response.body);
+        _toast.hide();
+
+        if (data.correct_answer !== data.user_answer) {
+            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_wrong;
+            document.getElementById(`activesModalDaily--answer--${data.correct_answer}`).classList.add('activesModalDaily--answer--correct');
+            document.getElementById(`activesModalDaily--answer--${data.user_answer}`).classList.add('activesModalDaily--answer--wrong');
+        } else {
             document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_correct + ' ' + dailyBonus + ' <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg">';
-            _toast.show();
             _player.balance += dailyBonus;
             document.getElementById('activesBalance').innerHTML = _player.balance;
+            document.getElementById(`activesModalDaily--answer--${data.correct_answer}`).classList.add('activesModalDaily--answer--correct');
         }
+
+        _toast.show();
     }
 
     hideActivesModal();
