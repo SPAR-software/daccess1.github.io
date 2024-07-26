@@ -275,4 +275,6 @@ function showPagePreloader() {
     clearInterval(energyInterval);
     clearInterval(_actives_daily_interval);
     document.getElementById('pageContent').innerHTML = '<div class="pagePreloader"><img src="https://d25ebjvanew4na.cloudfront.net/static/infinite-spinner-orange.svg" alt="loading"></div>';
+    document.getElementById('body').classList.remove('modalShown');
+    document.getElementById('pageContent').classList.remove('blur');
 }

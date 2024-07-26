@@ -40,6 +40,8 @@ document.addEventListener('preload', async () => {
     _wa.BackButton.onClick(() => {
         loadHomePage();
         _active_page = "home";
+        document.getElementById('body').classList.remove('modalShown');
+        document.getElementById('pageContent').classList.remove('blur');
     });
 
     const toastEl = document.getElementById('toast');
@@ -59,7 +61,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 104;
+    const ver = 105;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
