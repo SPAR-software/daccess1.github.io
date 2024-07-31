@@ -39,9 +39,23 @@ async function getUserData() {
         if (playerPayload.status === 200) {
             _player = await playerPayload.json();
         } else {
+            let name = _tg_user.username;
+
+            if (!name && _tg_user.last_name) {
+                name = _tg_user.last_name;
+            }
+
+            if (!name && _tg_user.first_name) {
+                name = _tg_user.first_name;
+            }
+
+            if (!name) {
+                name = "BOSS";
+            }
+
             const body = {
                 "user_id": _tg_user.id,
-                "user_name": _tg_user.username,
+                "user_name": name,
                 "inviter_ref_id": _start_param,
                 "avatar_link": "",
                 "language_code": _tg_user.language_code
