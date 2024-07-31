@@ -101,7 +101,11 @@ document.addEventListener('loadHome', () => {
                 }
                 if (_player.balance < body.balance) {
                     _player.balance = body.balance;
-                    document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
+                    try {
+                        document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
+                    } catch (ex) {
+
+                    }
                 }
                 lastBalanceUpdate = window.performance.now();
             }
@@ -115,7 +119,11 @@ document.addEventListener('loadHome', () => {
             }
             if (_player.balance < body.balance) {
                 _player.balance = body.balance;
-                document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
+                try {
+                    document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
+                } catch (ex) {
+
+                }
             }
             lastBalanceUpdate = window.performance.now();
         }
