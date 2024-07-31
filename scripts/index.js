@@ -1,5 +1,5 @@
 function copyUrlButtonClick() {
-    navigator.clipboard.writeText(`https://t.me/big_bad_bot/bigbadgame?startapp${_player.ref_id}`);
+    navigator.clipboard.writeText(`https://t.me/UmperiumTGBot/umperium?startapp=${_player.ref_id}`);
     document.getElementById("toast-body").innerHTML = _translations[_player.language_code].friends.url_copied;
     _toast.show();
 }

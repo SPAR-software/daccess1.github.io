@@ -4,8 +4,9 @@ var energyCurrent, homePlayerBalance, homeTapContainer;
 var energyInterval;
 var tapsStartTime = new Date();
 var dailyData;
-var skipUpdateAfterTaps = false;
 var lastBalanceUpdate = window.performance.now();
+
+var sessionTaps = 0, totalSentTaps = 0;
 
 function tapEventListener(event) {
     let posX, posY;
@@ -39,6 +40,7 @@ function tapEventListener(event) {
         drawTapResult(posX, posY);
         drawLevelBars();
         tapsCount++;
+        sessionTaps++;
         clearTimeout(tapsTimeout);
         resetOfflineTimeout();
     }
@@ -67,6 +69,7 @@ document.addEventListener('loadHome', () => {
         e.preventDefault();
     }
 
+    clearInterval(energyInterval);
     energyInterval = setInterval(async () => {
         const tmpTapsCount = tapsCount;
         const tmpTapsStartTime = tapsStartTime.toISOString();
@@ -82,7 +85,8 @@ document.addEventListener('loadHome', () => {
                 const body = JSON.parse(res.body);
                 _player.current_energy = body.new_energy;
                 energyCurrent.innerHTML = _player.current_energy;
-                lastBalanceUpdate = window.performance.now()
+                lastBalanceUpdate = window.performance.now();
+                totalSentTaps += tmpTapsCount;
             });
         } else if (_player.current_energy === _player.max_energy) {
             const timeFromLastUpdate = Math.round((window.performance.now() - lastBalanceUpdate) / 1000);
@@ -97,7 +101,7 @@ document.addEventListener('loadHome', () => {
                 }
                 if (_player.balance < body.balance) {
                     _player.balance = body.balance;
-                    homePlayerBalance.innerHTML = _player.balance;
+                    document.getElementById('screenHeader--balance').innerHTML = _player.balance;
                 }
                 lastBalanceUpdate = window.performance.now();
             }
@@ -111,11 +115,11 @@ document.addEventListener('loadHome', () => {
             }
             if (_player.balance < body.balance) {
                 _player.balance = body.balance;
-                homePlayerBalance.innerHTML = _player.balance;
+                document.getElementById('screenHeader--balance').innerHTML = _player.balance;
             }
             lastBalanceUpdate = window.performance.now();
         }
-    }, 3000);
+    }, 1000);
 
     ['pointerdown'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
@@ -123,16 +127,18 @@ document.addEventListener('loadHome', () => {
 
     ['pointerup'].forEach(eventType => {
         target.addEventListener(eventType, (e) => {
-            tapsTimeout = setTimeout(() => {
-                if (tapsCount > 0) {
-                    backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
-                        taps: tapsCount,
-                        timestamp: tapsStartTime.toISOString(),
-                    }).then(res => {
-                    });
-                }
-                tapsCount = 0;
-            }, 500);
+            // tapsTimeout = setTimeout(() => {
+            //     if (tapsCount > 0) {
+            //         totalSentTaps += tapsCount;
+            //         backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
+            //             taps: tapsCount,
+            //             timestamp: tapsStartTime.toISOString(),
+            //         }).then(res => {
+            //             tapsCount = 0;
+            //             console.log(`Total taps timeout: ${sessionTaps}, total sent: ${totalSentTaps}`);
+            //         });
+            //     }
+            // }, 1000);
             animateTimeout = setTimeout(() => {
                 homeTapContainer.classList.remove('tapGame--tapped');
             }, 100);

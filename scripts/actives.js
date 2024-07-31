@@ -2,12 +2,12 @@ var dailyBonus;
 
 document.addEventListener('loadActives', async () => {
     clearInterval(_actives_daily_interval);
-    energyInterval = setInterval(async () => {
-        const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
-        const body = await req.json();
-        _player.balance = body.balance;
-        document.getElementById('screenTopNotification--activesBalance').innerHTML = body.balance;
-    }, 60000 * 60);
+    // energyInterval = setInterval(async () => {
+    //     const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
+    //     const body = await req.json();
+    //     _player.balance = body.balance;
+    //     document.getElementById('screenTopNotification--activesBalance').innerHTML = body.balance;
+    // }, 60000 * 60);
     _actives_daily_interval = setInterval(() => {
         _actives_daily_countdown--;
 
@@ -27,7 +27,9 @@ document.addEventListener('loadActives', async () => {
             return;
         }
 
-        document.getElementById("dailyCard--timerCountdown").innerHTML = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
+        if (_actives_daily_countdown) {
+            document.getElementById("dailyCard--timerCountdown").innerHTML = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
+        }
     }, 1000);
 });
 
@@ -115,7 +117,7 @@ async function upgradeActive(el) {
         _toast.show();
         await loadActivesPage(_current_actives_tab, true);
         _player.balance -= price;
-        document.getElementById('activesBalance').innerHTML = _player.balance;
+        document.getElementById('screenHeader--balance').innerHTML = _player.balance;
     } else {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
         _toast.show();
@@ -162,7 +164,7 @@ async function dailyAnswerClick(el) {
         } else {
             document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_correct + ' ' + dailyBonus + ' <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg">';
             _player.balance += dailyBonus;
-            document.getElementById('activesBalance').innerHTML = _player.balance;
+            document.getElementById('screenHeader--balance').innerHTML = _player.balance;
             document.getElementById(`activesModalDaily--answer--${data.correct_answer}`).classList.add('activesModalDaily--answer--correct');
         }
 
