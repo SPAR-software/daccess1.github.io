@@ -18,7 +18,7 @@ async function donate() {
         document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].airdrop.success}`;
         _toast.show();
         _player.balance -= value;
-        document.getElementById('airdropBalance').innerHTML = _player.balance;
+        document.getElementById('airdropBalance').innerHTML = formatBalance(_player.balance);
     } else {
         document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].airdrop.error}`;
         _toast.show();

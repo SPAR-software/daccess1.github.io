@@ -48,7 +48,7 @@ async function loadHomePage(reload = false) {
     const view = {
         avatar: _player.avatar_link,
         name: _player.name,
-        balance: _player.balance,
+        balance: formatBalance(_player.balance),
         current_energy: _player.current_energy,
         max_energy: _player.max_energy,
         level: _player.player_level.level,
@@ -231,12 +231,12 @@ async function loadActivesPage(tab = 'round', reload = false) {
         tab_directions: tab === 'direction',
         tab_projects: tab === 'project',
         tab_specials: tab === 'special',
-        header_notification: `${_translations[_player.language_code].actives.header_actives}: ${total_purchased} | ${_translations[_player.language_code].actives.header_income}: ${total_income}`,
+        header_notification: `${_translations[_player.language_code].actives.header_actives}: ${total_purchased} | ${_translations[_player.language_code].actives.header_income}: ${formatTotalIncome(total_income)}`,
         items: data,
         text: _translations[_player.language_code].actives,
         daily: dailyData,
         daily_active: daily_active,
-        balance: _player.balance,
+        balance: formatBalance(_player.balance),
     };
 
     const template = _page_templates['actives'];
@@ -261,7 +261,7 @@ async function loadAirdropPage() {
     showPagePreloader();
 
     const view = {
-        balance: _player.balance,
+        balance: formatBalance(_player.balance),
         text: _translations[_player.language_code].airdrop
     }
 

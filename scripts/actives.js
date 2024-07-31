@@ -2,12 +2,6 @@ var dailyBonus;
 
 document.addEventListener('loadActives', async () => {
     clearInterval(_actives_daily_interval);
-    // energyInterval = setInterval(async () => {
-    //     const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
-    //     const body = await req.json();
-    //     _player.balance = body.balance;
-    //     document.getElementById('screenTopNotification--activesBalance').innerHTML = body.balance;
-    // }, 60000 * 60);
     _actives_daily_interval = setInterval(() => {
         _actives_daily_countdown--;
 
@@ -49,7 +43,7 @@ function showActivesModal(el) {
     document.getElementById('activesModal--income').innerHTML = el.dataset.income;
     document.getElementById('activesModal--startPrice').innerHTML = el.dataset.startPrice;
     document.getElementById('activesModal--button').dataset.id = el.dataset.id;
-    document.getElementById('activesModal--button').dataset.price = el.dataset.startPrice;
+    document.getElementById('activesModal--button').dataset.price = el.dataset.priceRaw;
 
     document.getElementById('body').classList.add('modalShown');
     blur.classList.remove('activesBlur--hidden');
@@ -117,7 +111,7 @@ async function upgradeActive(el) {
         _toast.show();
         await loadActivesPage(_current_actives_tab, true);
         _player.balance -= price;
-        document.getElementById('screenHeader--balance').innerHTML = _player.balance;
+        document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
     } else {
         document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.toast_fail;
         _toast.show();
@@ -164,7 +158,7 @@ async function dailyAnswerClick(el) {
         } else {
             document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_correct + ' ' + dailyBonus + ' <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg">';
             _player.balance += dailyBonus;
-            document.getElementById('screenHeader--balance').innerHTML = _player.balance;
+            document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
             document.getElementById(`activesModalDaily--answer--${data.correct_answer}`).classList.add('activesModalDaily--answer--correct');
         }
 
@@ -175,4 +169,18 @@ async function dailyAnswerClick(el) {
 
     // document.getElementById("toast-body").innerHTML = `${_translations[_player.language_code].airdrop.error_insufficient_funds}`;
     // _toast.show();
+}
+
+function formatTotalIncome(income) {
+    if (income > 1000) {
+        const formatted = (income / 1000).toString();
+        return formatted.substring(0, formatted.indexOf('.') + 3) + 'K';
+    }
+
+    if (income > 1000000) {
+        const formatted = (income / 1000000).toString();
+        return formatted.substring(0, formatted.indexOf('.') + 3) + 'M';
+    }
+
+    return income.toString();
 }

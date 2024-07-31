@@ -24,7 +24,7 @@ function tapEventListener(event) {
         energyCurrent.innerHTML = _player.current_energy;
 
         _player.balance += _player.tap_increment;
-        homePlayerBalance.innerHTML = _player.balance;
+        homePlayerBalance.innerHTML = formatBalance(_player.balance);
 
         if (_player.balance >= _levels[_player.player_level.level + 1]) {
             _player.player_level.level++;
@@ -101,7 +101,7 @@ document.addEventListener('loadHome', () => {
                 }
                 if (_player.balance < body.balance) {
                     _player.balance = body.balance;
-                    document.getElementById('screenHeader--balance').innerHTML = _player.balance;
+                    document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
                 }
                 lastBalanceUpdate = window.performance.now();
             }
@@ -115,7 +115,7 @@ document.addEventListener('loadHome', () => {
             }
             if (_player.balance < body.balance) {
                 _player.balance = body.balance;
-                document.getElementById('screenHeader--balance').innerHTML = _player.balance;
+                document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
             }
             lastBalanceUpdate = window.performance.now();
         }
@@ -168,8 +168,8 @@ async function showLevelModal() {
     const data = await response.json();
 
     document.getElementById('levelModal--statsValue--totalActives').innerHTML = data.total_investments_count;
-    document.getElementById('levelModal--statsValue--totalSpent').innerHTML = data.total_investments_amout;
-    document.getElementById('levelModal--statsValue--totalIncome').innerHTML = data.total_income_from_cards;
+    document.getElementById('levelModal--statsValue--totalSpent').innerHTML = data.f_total_investments_amout;
+    document.getElementById('levelModal--statsValue--totalIncome').innerHTML = data.f_total_income_from_cards;
     document.getElementById('levelModal--statsValue--pnl').innerHTML = data.total_average_cards_profit_percent + '%';
     document.getElementById('levelModal--statsValue--rounds').innerHTML = data.card_type_distribution.round + '%';
     document.getElementById('levelModal--statsValue--directions').innerHTML = data.card_type_distribution.direction + '%';
@@ -193,7 +193,7 @@ async function showLevelModal() {
 
     const width = Math.floor(_player.balance / _levels[_player.player_level.level + 1] * 100);
     progressEL.getElementsByClassName('progress-bar')[0].style.width = `${width}%`;
-    progressEL.getElementsByClassName('progress-bar')[0].getElementsByClassName('progress--levelText')[0].innerHTML = `${_player.balance} / ${_levels[_player.player_level.level + 1]}`;
+    progressEL.getElementsByClassName('progress-bar')[0].getElementsByClassName('progress--levelText')[0].innerHTML = `${formatBalance(_player.balance)} / ${formatBalance(_levels[_player.player_level.level + 1])}`;
 
     document.getElementById('levelModal').classList.remove('d-none');
     _wa.BackButton.show();
@@ -262,4 +262,8 @@ function drawLevelBars() {
 function hideIncomeModal() {
     document.getElementById('incomeModal').classList.add('incomeModal--hidden');
     document.getElementById('incomeModal--backdrop').classList.add('d-none');
+}
+
+function formatBalance(balance) {
+    return balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
