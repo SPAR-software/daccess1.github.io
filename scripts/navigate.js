@@ -73,6 +73,7 @@ async function loadHomePage(reload = false) {
     clearInterval(_actives_daily_interval);
     _show_offline_income = false;
     resetOfflineTimeout();
+    document.getElementById('body').classList.remove('modalShown');
 }
 
 async function loadFriendsPage(reload = false) {
@@ -105,6 +106,7 @@ async function loadFriendsPage(reload = false) {
 
     clearInterval(_actives_daily_interval);
     resetOfflineTimeout();
+    document.getElementById('body').classList.remove('modalShown');
 }
 
 async function loadBoostPage() {
@@ -136,6 +138,7 @@ async function loadBoostPage() {
     _active_page = "boost";
 
     clearInterval(_actives_daily_interval);
+    document.getElementById('body').classList.remove('modalShown');
 }
 
 async function loadActivesPage(tab = 'round', reload = false) {
@@ -246,6 +249,7 @@ async function loadActivesPage(tab = 'round', reload = false) {
     _active_page = `actives_${tab}`;
     resetOfflineTimeout();
     document.dispatchEvent(new Event('loadActives'));
+    document.getElementById('body').classList.remove('modalShown');
 }
 
 async function loadAirdropPage() {
@@ -269,6 +273,7 @@ async function loadAirdropPage() {
 
     clearInterval(_actives_daily_interval);
     resetOfflineTimeout();
+    document.getElementById('body').classList.remove('modalShown');
 }
 
 function showPagePreloader() {

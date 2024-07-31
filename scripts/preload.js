@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('preload', async () => {
     _wa.BackButton.onClick(() => {
+        document.getElementById('body').classList.remove('modalShown');
+        document.getElementById('pageContent').classList.remove('blur');
         loadHomePage();
         _active_page = "home";
         document.getElementById('body').classList.remove('modalShown');
