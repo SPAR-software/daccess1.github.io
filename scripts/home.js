@@ -6,8 +6,6 @@ var tapsStartTime = new Date();
 var dailyData;
 var lastBalanceUpdate = window.performance.now();
 
-var sessionTaps = 0, totalSentTaps = 0;
-
 function tapEventListener(event) {
     let posX, posY;
 
@@ -22,6 +20,7 @@ function tapEventListener(event) {
     if (_player.current_energy > (4 + _player.player_level.level)) {
         _player.current_energy -= (4 + _player.player_level.level);
         energyCurrent.innerHTML = _player.current_energy;
+        console.log(new Date().toISOString(), 'Energy upd on tap:', _player.current_energy);
 
         _player.balance += 4 + _player.player_level.level;
         homePlayerBalance.innerHTML = formatBalance(_player.balance);
@@ -40,7 +39,6 @@ function tapEventListener(event) {
         drawTapResult(posX, posY);
         drawLevelBars();
         tapsCount++;
-        sessionTaps++;
         clearTimeout(tapsTimeout);
         resetOfflineTimeout();
     }
@@ -78,17 +76,28 @@ document.addEventListener('loadHome', () => {
         tapsStartTime = new Date();
 
         if (tmpTapsCount > 0) {
-            backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
+            const resp = await backendAPIRequest(`/player/${_tg_user.id}/update_taps`, 'post', {
                 taps: tmpTapsCount,
                 timestamp: tmpTapsStartTime,
-            }).then(res => {
-                const body = JSON.parse(res.body);
-                _player.current_energy = body.new_energy;
-                energyCurrent.innerHTML = _player.current_energy;
-                lastBalanceUpdate = window.performance.now();
-                totalSentTaps += tmpTapsCount;
             });
-        } else if (_player.current_energy === _player.max_energy) {
+            const body = JSON.parse(resp.body);
+
+            // _player.current_energy = body.new_energy;
+            // energyCurrent.innerHTML = _player.current_energy;
+            // console.log(new Date().toISOString(), 'Energy upd after taps:', body.new_energy);
+            if (_player.current_energy < _player.max_energy) {
+                _player.current_energy += 3;
+
+                if (_player.current_energy > _player.max_energy) {
+                    _player.current_energy = _player.max_energy;
+                }
+
+                energyCurrent.innerHTML = _player.current_energy;
+                console.log(new Date().toISOString(), 'Energy upd while tapping:',_player.current_energy);
+            }
+            lastBalanceUpdate = window.performance.now();
+        } else
+        if (_player.current_energy === _player.max_energy) {
             const timeFromLastUpdate = Math.round((window.performance.now() - lastBalanceUpdate) / 1000);
 
             if (timeFromLastUpdate >= _offline_balance_update_time) {
@@ -98,6 +107,7 @@ document.addEventListener('loadHome', () => {
                 if (_player.current_energy < body.energy) {
                     _player.current_energy = body.energy;
                     energyCurrent.innerHTML = _player.current_energy;
+                    console.log('Energy upd max:', body.new_energy);
                 }
                 if (_player.balance < body.balance) {
                     _player.balance = body.balance;
@@ -113,7 +123,8 @@ document.addEventListener('loadHome', () => {
             const req = await fetch(`${_base_url}/player/${_tg_user.id}/balance`);
             const body = await req.json();
 
-            if (_player.current_energy < body.energy) {
+            if (_player.current_energy < body.energy && tapsCount === 0) {
+                console.log(new Date().toISOString(), 'Energy upd regular:', body.energy);
                 _player.current_energy = body.energy;
                 energyCurrent.innerHTML = _player.current_energy;
             }
@@ -127,7 +138,7 @@ document.addEventListener('loadHome', () => {
             }
             lastBalanceUpdate = window.performance.now();
         }
-    }, 1000);
+    }, 3000);
 
     ['pointerdown'].forEach(eventType => {
         target.addEventListener(eventType, tapEventListener);
