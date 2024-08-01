@@ -209,7 +209,7 @@ async function showLevelModal() {
 
 function drawTapResult(x, y) {
     var el = document.createElement('div');
-    el.innerHTML = '+' + _player.tap_increment;
+    el.innerHTML = '+' + (4 + _player.player_level.level);
     el.classList.add('tapResult');
     el.style.left = `${x - 20}px`;
     el.style.top = `${y - 20}px`;
