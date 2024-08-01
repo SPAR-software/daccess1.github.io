@@ -19,11 +19,11 @@ function tapEventListener(event) {
         posY = event.pageY;
     }
 
-    if (_player.current_energy > 0) {
-        _player.current_energy--;
+    if (_player.current_energy > (4 + _player.player_level.level)) {
+        _player.current_energy -= (4 + _player.player_level.level);
         energyCurrent.innerHTML = _player.current_energy;
 
-        _player.balance += _player.tap_increment;
+        _player.balance += 4 + _player.player_level.level;
         homePlayerBalance.innerHTML = formatBalance(_player.balance);
 
         if (_player.balance >= _levels[_player.player_level.level + 1]) {
