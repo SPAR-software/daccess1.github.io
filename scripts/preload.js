@@ -19,7 +19,7 @@ var _levels = {
 var _actives_daily_interval;
 var _actives_daily_countdown;
 var _show_offline_income = true;
-var _base_url = "https://game-backend.umperium-game.com";
+var _base_url = "https://game-backend.umperium.com";
 var _page_templates = {};
 var _offline_timeout_time_max = 3600 * 3;
 var _offline_timeout_time_current = 0;
