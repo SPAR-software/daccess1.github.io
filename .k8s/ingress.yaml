@@ -1,9 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: umperium-game-ingress
+  name: umperium-game-frontend
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-nginx
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "yc-clusterissuer"
 spec:
   ingressClassName: "nginx"
   tls:
