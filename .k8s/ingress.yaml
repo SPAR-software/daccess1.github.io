@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: umperium-frontend-ingress
+  name: umperium-game-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
+    cert-manager.io/cluster-issuer: letsencrypt-nginx
 spec:
   ingressClassName: "nginx"
   tls:
     - hosts:
-        - game.umperium-game.com
-      secretName: frontend-secret
+        - game.umperium.com
+      secretName: umperium-game-secret
   rules:
-    - host: game.umperium-game.com
+    - host: game.umperium.com
       http:
         paths:
           - path: /
