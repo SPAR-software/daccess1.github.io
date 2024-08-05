@@ -9,9 +9,9 @@
 <div class="container-fluid inviteButtons">
     <div class="row">
         <div class="col d-flex">
-            <a class="inviteButtons--button inviteButtons--buttonInvite" href="https://t.me/share/url?url=t.me/UmperiumTGBot/umperium?startapp={{ref_id}}&text={{text.tg_message_text}}">{{text.invite_button}} <img src="https://d25ebjvanew4na.cloudfront.net/static/button-icon-plus.svg" alt="plus"></a>
+            <a class="inviteButtons--button inviteButtons--buttonInvite" href="https://t.me/share/url?url=t.me/UmperiumTGBot/umperium?startapp={{ref_id}}&text={{text.tg_message_text}}">{{text.invite_button}} <img src="https://cdn.umperium.com/static/button-icon-plus.svg" alt="plus"></a>
             <a class="inviteButtons--button inviteButtons--buttonCopyUrl" onclick="copyUrlButtonClick()">
-                <img src="https://d25ebjvanew4na.cloudfront.net/static/button-icon-copy.svg" alt="copy">
+                <img src="https://cdn.umperium.com/static/button-icon-copy.svg" alt="copy">
             </a>
         </div>
     </div>
@@ -22,18 +22,18 @@
         <div class="col">
             <div class="inviteInfo--item">
                 <div class="inviteInfo--itemIcon">
-                    <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift.png.webp" srcset="https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift@2x.png.webp 2x, https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift@3x.png.webp 3x" alt="gift">
+                    <img src="https://cdn.umperium.com/static/icon-invite-gift.png.webp" srcset="https://cdn.umperium.com/static/icon-invite-gift@2x.png.webp 2x, https://cdn.umperium.com/static/icon-invite-gift@3x.png.webp 3x" alt="gift">
                 </div>
                 <div class="inviteInfo--itemText">
                     <h3 class="inviteInfo--itemTextTitle">{{text.one_friend_title}}</h3>
                     <p class="inviteInfo--itemTextBody">
-                        <span class="inviteInfo--itemTextBodyHighlight">+10 000 </span> <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg" alt="coin"> {{text.one_friend_bonus}}
+                        <span class="inviteInfo--itemTextBodyHighlight">+10 000 </span> <img src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin"> {{text.one_friend_bonus}}
                     </p>
                 </div>
             </div>
             <div class="inviteInfo--item">
                 <div class="inviteInfo--itemIcon">
-                    <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift.png.webp" srcset="https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift@2x.png.webp 2x, https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift@3x.png.webp 3x" alt="gift">
+                    <img src="https://cdn.umperium.com/static/icon-invite-gift.png.webp" srcset="https://cdn.umperium.com/static/icon-invite-gift@2x.png.webp 2x, https://cdn.umperium.com/static/icon-invite-gift@3x.png.webp 3x" alt="gift">
                 </div>
                 <div class="inviteInfo--itemText">
                     <h3 class="inviteInfo--itemTextTitle">{{text.three_friend_title}}</h3>
@@ -44,7 +44,7 @@
             </div>
             <div class="inviteInfo--item">
                 <div class="inviteInfo--itemIcon">
-                    <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift.png.webp" srcset="https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift@2x.png.webp 2x, https://d25ebjvanew4na.cloudfront.net/static/icon-invite-gift@3x.png.webp 3x" alt="gift">
+                    <img src="https://cdn.umperium.com/static/icon-invite-gift.png.webp" srcset="https://cdn.umperium.com/static/icon-invite-gift@2x.png.webp 2x, https://cdn.umperium.com/static/icon-invite-gift@3x.png.webp 3x" alt="gift">
                 </div>
                 <div class="inviteInfo--itemText">
                     <h3 class="inviteInfo--itemTextTitle">{{text.five_friend_title}}</h3>
@@ -63,7 +63,7 @@
             <div class="friendsList--blockTitle d-flex justify-content-between align-items-center">
                 <h2 class="friendsList--blockTitle--text">{{text.friends_list_title}} ({{friends_count}})</h2>
                 <a class="friendsList--blockTitle--refreshButton" onclick="loadFriendsPage(true)">
-                    <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-refresh.svg" alt="refresh">
+                    <img src="https://cdn.umperium.com/static/icon-refresh.svg" alt="refresh">
                 </a>
             </div>
 
@@ -71,19 +71,19 @@
             <div class="friendsList--item d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
                     <div class="friendsList--item--image">
-                        <img src="https://d25ebjvanew4na.cloudfront.net/static/user-avatar-placeholder.png.webp" alt="avatar">
+                        <img src="https://cdn.umperium.com/static/user-avatar-placeholder.png.webp" alt="avatar">
                     </div>
                     <div class="friendsList--item--text">
                         <p class="friendsList--item--textName">{{user_name}}</p>
                         <p class="friendsList--item--textScore">
                             {{level_name}}
                             {{f_balance}}
-                            <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg" alt="coin">
+                            <img src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin">
                         </p>
                     </div>
                 </div>
                 <div class="friendsList--item--reward d-flex align-items-center">
-                    +{{f_profit}} <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg" alt="coin">
+                    +{{f_profit}} <img src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin">
                 </div>
             </div>
             {{/friends}}

@@ -56,7 +56,7 @@
       height: calc(100vw - 108px);
       //margin-top: calc(-1 * (100vw - 108px) * 1.166666667 / 2);
       margin-left: calc(-1 * (100vw - 108px) / 2);
-      background-image: url("https://d25ebjvanew4na.cloudfront.net/static/tap-bg.svg");
+      background-image: url("https://cdn.umperium.com/static/tap-bg.svg");
       background-size: cover;
       background-position: center;
       z-index: 1;
@@ -157,7 +157,7 @@
   overflow-y: auto;
 
   .swiper-button-next::after, .swiper-button-prev::after {
-    background-image: url("https://d25ebjvanew4na.cloudfront.net/static/icon-slide-right.svg");
+    background-image: url("https://cdn.umperium.com/static/icon-slide-right.svg");
     background-position: center;
     background-repeat: no-repeat;
     content: '';
@@ -168,11 +168,11 @@
     rotate: 180deg;
   }
   .carousel-control-prev-icon {
-    background-image: url("https://d25ebjvanew4na.cloudfront.net/static/icon-slide-right.svg");
+    background-image: url("https://cdn.umperium.com/static/icon-slide-right.svg");
     rotate: 180deg;
   }
   .carousel-control-next-icon {
-    background-image: url("https://d25ebjvanew4na.cloudfront.net/static/icon-slide-right.svg");
+    background-image: url("https://cdn.umperium.com/static/icon-slide-right.svg");
   }
   &--carousel {
     padding-top: 20px;
@@ -209,7 +209,7 @@
         left: 50%;
         margin-left: -84px;
         margin-top: -84px;
-        background-image: url("https://d25ebjvanew4na.cloudfront.net/static/tap-bg.svg");
+        background-image: url("https://cdn.umperium.com/static/tap-bg.svg");
         width: 168px;
         height: 168px;
         background-size: contain;
@@ -316,7 +316,7 @@
     &::after {
       position: absolute;
       content: '';
-      background-image: url("https://d25ebjvanew4na.cloudfront.net/static/icon-check-green.svg");
+      background-image: url("https://cdn.umperium.com/static/icon-check-green.svg");
       width: 23px;
       height: 17px;
       top:50%;

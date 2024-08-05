@@ -54,7 +54,7 @@
   width: calc(100vw - 108px);
   height: calc(100vw - 108px);
   margin-left: calc(-1 * (100vw - 108px) / 2);
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/tap-bg.svg");
+  background-image: url("https://cdn.umperium.com/static/img/tap-bg.svg");
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -154,7 +154,7 @@
   overflow-y: auto;
 }
 .levelModal .swiper-button-next::after, .levelModal .swiper-button-prev::after {
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-slide-right.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-slide-right.svg");
   background-position: center;
   background-repeat: no-repeat;
   content: "";
@@ -165,11 +165,11 @@
   rotate: 180deg;
 }
 .levelModal .carousel-control-prev-icon {
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-slide-right.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-slide-right.svg");
   rotate: 180deg;
 }
 .levelModal .carousel-control-next-icon {
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-slide-right.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-slide-right.svg");
 }
 .levelModal--carouselText {
   width: 100%;
@@ -279,7 +279,7 @@
 .changeLangButton--active::after {
   position: absolute;
   content: "";
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-check-green.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-check-green.svg");
   width: 23px;
   height: 17px;
   top: 50%;

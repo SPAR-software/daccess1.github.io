@@ -156,7 +156,7 @@ async function dailyAnswerClick(el) {
             document.getElementById(`activesModalDaily--answer--${data.correct_answer}`).classList.add('activesModalDaily--answer--correct');
             document.getElementById(`activesModalDaily--answer--${data.user_answer}`).classList.add('activesModalDaily--answer--wrong');
         } else {
-            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_correct + ' ' + dailyBonus + ' <img src="https://d25ebjvanew4na.cloudfront.net/static/icon-coin.svg">';
+            document.getElementById("toast-body").innerHTML = _translations[_player.language_code].actives.daily_answer_correct + ' ' + dailyBonus + ' <img src="https://cdn.umperium.com/static/icon-coin.svg">';
             _player.balance += dailyBonus;
             document.getElementById('screenHeader--balance').innerHTML = formatBalance(_player.balance);
             document.getElementById(`activesModalDaily--answer--${data.correct_answer}`).classList.add('activesModalDaily--answer--correct');

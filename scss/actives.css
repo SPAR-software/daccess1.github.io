@@ -222,7 +222,7 @@
   height: 20px;
   right: -24px;
   top: 6px;
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-coin.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-coin.svg");
   background-size: cover;
 }
 .activesModal--incomeValue {
@@ -240,7 +240,7 @@
   height: 14px;
   right: -17px;
   top: 4px;
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-coin.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-coin.svg");
   background-size: cover;
 }
 .activesModal--text {
@@ -290,7 +290,7 @@
   height: 14px;
   right: -17px;
   top: 4px;
-  background-image: url("https://d25ebjvanew4na.cloudfront.net/static/img/icon-coin.svg");
+  background-image: url("https://cdn.umperium.com/static/img/icon-coin.svg");
   background-size: cover;
 }
 .activesModal--button {

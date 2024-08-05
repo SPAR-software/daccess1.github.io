@@ -82,7 +82,7 @@
   width: var(--width);
   height: var(--width);
   overflow: hidden;
-  background-image: url('https://d25ebjvanew4na.cloudfront.net/static/wheel-of-fortune-bg.svg');
+  background-image: url('https://cdn.umperium.com/static/wheel-of-fortune-bg.svg');
   background-position: center;
   background-size: cover;
 
@@ -95,7 +95,7 @@
     top: 50%;
     margin-left: -13.5%;
     margin-top: -17.5%;
-    background-image: url("https://d25ebjvanew4na.cloudfront.net/static/wheel-of-fortune-arrow.svg");
+    background-image: url("https://cdn.umperium.com/static/wheel-of-fortune-arrow.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@
     top: 50%;
     margin-left: calc((var(--width) - 10%) / -2);
     margin-top: calc((var(--width) - 10%) / -2);
-    background-image: url('https://d25ebjvanew4na.cloudfront.net/static/wheel-of-fortune-spinner@3x.png.webp');
+    background-image: url('https://cdn.umperium.com/static/wheel-of-fortune-spinner@3x.png.webp');
     background-position: center;
     background-size: cover;
     width: calc((var(--width) - 10%));
