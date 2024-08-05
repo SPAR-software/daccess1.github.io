@@ -1,9 +1,6 @@
 version: "3.9"
 
 services:
-#  umperium_frontend_latest:
-#    image: 729065055096.dkr.ecr.ap-northeast-2.amazonaws.com/umperium-frontend:latest
-#    build: .
   umperium_frontend:
-    image: 729065055096.dkr.ecr.ap-northeast-2.amazonaws.com/umperium-frontend:1.1.21
+    image: cr.yandex/crprep7mlarphamjggv1/frontend/umperium-frontend:1.1.21
     build: .
