@@ -46,7 +46,6 @@ async function loadHomePage(reload = false) {
     await getUserData();
 
     const view = {
-        avatar: _player.avatar_link,
         name: _player.name,
         balance: formatBalance(_player.balance),
         current_energy: _player.current_energy,
@@ -58,7 +57,6 @@ async function loadHomePage(reload = false) {
         language_code: _player.language_code,
         show_offline_income: _show_offline_income,
         offline_income: offline_income,
-        show_avatar: _player.avatar_link.length > 0
     }
 
     const template = _page_templates['home'];

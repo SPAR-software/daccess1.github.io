@@ -3,9 +3,6 @@
         <div class="col-3"></div>
         <div class="col-6 d-flex justify-content-center">
             <div class="screenTopNotification--container" onclick="showLevelModal()">
-                {{#show_avatar}}
-                <img src="{{avatar}}" alt="avatar" class="screenTopNotification--avatar">
-                {{/show_avatar}}
                 <span class="screenTopNotification--text" id="screenTopNotification--boostCountdown">{{name}}</span>
             </div>
         </div>
@@ -186,9 +183,6 @@
     <div class="row">
         <div class="col">
             <div class="levelModal--ranking">
-                {{#show_avatar}}
-                <img src="{{avatar}}"  width="33px" height="33px" alt="avatar">
-                {{/show_avatar}}
                 {{text.ranking}}:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
             </div>
         </div>
