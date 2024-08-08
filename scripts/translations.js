@@ -11,31 +11,31 @@ var _translations = {
         levels: {
             1: {
                 name: "Beginner",
-                score: "0 - 5K"
+                score: "0 - 25K"
             },
             2: {
                 name: "Conservative",
-                score: "5K - 25K"
+                score: "25K - 100K"
             },
             3: {
                 name: "Moderate",
-                score: "25K - 100K"
+                score: "100K - 1M"
             },
             4: {
                 name: "Rational",
-                score: "100K - 1M"
+                score: "1M - 10M"
             },
             5: {
                 name: "Speculative",
-                score: "1M - 10M"
+                score: "10M - 50M"
             },
             6: {
                 name: "Aggressive",
-                score: "10M - 50M"
+                score: "50M - 100M"
             },
             7: {
-                name: "Enterprise",
-                score: "from 50M"
+                name: "Institutional",
+                score: "from 100M"
             }
         },
         offline: {
@@ -129,30 +129,30 @@ var _translations = {
         levels: {
             1: {
                 name: "Начинающий",
-                score: "0 - 5K"
+                score: "0 - 25K"
             },
             2: {
                 name: "Консервативный",
-                score: "5K - 25K"
+                score: "25K - 100K"
             },
             3: {
                 name: "Умеренный",
-                score: "25K - 100K"
+                score: "100K - 1M"
             },
             4: {
                 name: "Рациональный",
-                score: "100K - 1M"
+                score: "1M - 10M"
             },
             5: {
                 name: "Спекулятивный",
-                score: "1M - 10M"
+                score: "10M - 50M"
             },
             6: {
                 name: "Агрессивный",
-                score: "10M - 50M"
+                score: "50M - 100M"
             },
             7: {
-                name: "Корпоративный",
+                name: "Институциональный",
                 score: "от 50M"
             }
         },
@@ -247,31 +247,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "Anfänger",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "Konservativ",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
-                "name": "Mittel",
-                "score": "25K - 100K"
+                "name": "Moderat",
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "Rational",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Spekulativ",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "Aggressiv",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
-                "name": "Unternehmen",
-                "score": "ab 50M"
+                "name": "Institutionell",
+                "score": "ab 100M"
             }
         },
         "offline": {
@@ -365,31 +365,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "Principiante",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "Conservador",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
                 "name": "Moderado",
-                "score": "25K - 100K"
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "Racional",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Especulativo",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "Agresivo",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
-                "name": "Empresarial",
-                "score": "desde 50M"
+                "name": "Institucional",
+                "score": "desde 100M"
             }
         },
         "offline": {
@@ -483,31 +483,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "Débutant",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "Conservateur",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
                 "name": "Modéré",
-                "score": "25K - 100K"
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "Rationnel",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Spéculatif",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "Agressif",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
-                "name": "Entreprise",
-                "score": "à partir de 50M"
+                "name": "Institutionnel",
+                "score": "à partir de 100M"
             }
         },
         "offline": {
@@ -601,31 +601,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "शुरुआती",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
-                "name": "संरक्षक",
-                "score": "5K - 25K"
+                "name": "संरक्षणवादी",
+                "score": "25K - 100K"
             },
             "3": {
                 "name": "मध्यम",
-                "score": "25K - 100K"
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "तार्किक",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "सट्टेबाज",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "आक्रामक",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
-                "name": "उद्यम",
-                "score": "50M से"
+                "name": "संस्थागत",
+                "score": "100M से अधिक"
             }
         },
         "offline": {
@@ -716,34 +716,35 @@ var _translations = {
             "boost": "Boost",
             "airdrop": "Airdrop"
         },
+
         "levels": {
             "1": {
                 "name": "Pemula",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "Konservatif",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
                 "name": "Moderat",
-                "score": "25K - 100K"
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "Rasional",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Spekulatif",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "Agresif",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
-                "name": "Perusahaan",
-                "score": "dari 50M"
+                "name": "Institusional",
+                "score": "dari 100M"
             }
         },
         "offline": {
@@ -837,31 +838,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "Iniciante",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "Conservador",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
                 "name": "Moderado",
-                "score": "25K - 100K"
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "Racional",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Especulativo",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "Agressivo",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
-                "name": "Empresa",
-                "score": "a partir de 50M"
+                "name": "Institucional",
+                "score": "a partir de 100M"
             }
         },
         "offline": {
@@ -955,31 +956,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "ผู้เริ่มต้น",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "อนุรักษ์นิยม",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
                 "name": "ปานกลาง",
-                "score": "25K - 100K"
+                "score": "100K - 1M"
             },
             "4": {
-                "name": "มีเหตุผล",
-                "score": "100K - 1M"
+                "name": "ใช้เหตุผล",
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "เก็งกำไร",
-                "score": "1M - 10M"
-            },
-            "6": {
-                "name": "เชิงรุก",
                 "score": "10M - 50M"
             },
+            "6": {
+                "name": "ก้าวร้าว",
+                "score": "50M - 100M"
+            },
             "7": {
-                "name": "บริษัท",
-                "score": "จาก 50M"
+                "name": "สถาบัน",
+                "score": "จาก 100M"
             }
         },
         "offline": {
@@ -1073,31 +1074,31 @@ var _translations = {
         "levels": {
             "1": {
                 "name": "Başlangıç",
-                "score": "0 - 5K"
+                "score": "0 - 25K"
             },
             "2": {
-                "name": "Koruyucu",
-                "score": "5K - 25K"
-            },
-            "3": {
-                "name": "Orta Seviye",
+                "name": "Muhafazakar",
                 "score": "25K - 100K"
             },
-            "4": {
-                "name": "Mantıklı",
+            "3": {
+                "name": "Orta",
                 "score": "100K - 1M"
+            },
+            "4": {
+                "name": "Rasyonel",
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Spekülatif",
-                "score": "1M - 10M"
+                "score": "10M - 50M"
             },
             "6": {
                 "name": "Agresif",
-                "score": "10M - 50M"
+                "score": "50M - 100M"
             },
             "7": {
                 "name": "Kurumsal",
-                "score": " ve üzeri 50M"
+                "score": "100M'den"
             }
         },
         "offline": {
@@ -1190,32 +1191,32 @@ var _translations = {
         },
         "levels": {
             "1": {
-                "name": "Boshlovchi",
-                "score": "0 - 5K"
+                "name": "Boshlang'ich",
+                "score": "0 - 25K"
             },
             "2": {
-                "name": "Sakchil",
-                "score": "5K - 25K"
-            },
-            "3": {
-                "name": "O‘rta",
+                "name": "Konservativ",
                 "score": "25K - 100K"
             },
-            "4": {
-                "name": "Mantiqiy",
+            "3": {
+                "name": "O'rta",
                 "score": "100K - 1M"
+            },
+            "4": {
+                "name": "Ratsional",
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Spekulyativ",
-                "score": "1M - 10M"
-            },
-            "6": {
-                "name": "Agresiv",
                 "score": "10M - 50M"
             },
+            "6": {
+                "name": "Tajovuzkor",
+                "score": "50M - 100M"
+            },
             "7": {
-                "name": "Korporativ",
-                "score": "50M  va yuqori"
+                "name": "Institutsional",
+                "score": "100M'dan boshlab"
             }
         },
         "offline": {
@@ -1308,32 +1309,32 @@ var _translations = {
         },
         "levels": {
             "1": {
-                "name": "Người mới bắt đầu",
-                "score": "0 - 5K"
+                "name": "Người mới",
+                "score": "0 - 25K"
             },
             "2": {
                 "name": "Bảo thủ",
-                "score": "5K - 25K"
+                "score": "25K - 100K"
             },
             "3": {
-                "name": "Tương đối",
-                "score": "25K - 100K"
+                "name": "Trung bình",
+                "score": "100K - 1M"
             },
             "4": {
                 "name": "Hợp lý",
-                "score": "100K - 1M"
+                "score": "1M - 10M"
             },
             "5": {
                 "name": "Đầu cơ",
-                "score": "1M - 10M"
-            },
-            "6": {
-                "name": "Mạo hiểm",
                 "score": "10M - 50M"
             },
+            "6": {
+                "name": "Tấn công",
+                "score": "50M - 100M"
+            },
             "7": {
-                "name": "Doanh nghiệp",
-                "score": "Từ 50M trở lên"
+                "name": "Tổ chức",
+                "score": "từ 100M"
             }
         },
         "offline": {

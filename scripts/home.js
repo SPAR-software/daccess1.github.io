@@ -278,10 +278,18 @@ function drawLevelBars() {
     }
 
     for (let i = 1; i <= coloredBars; i++) {
-        document.getElementsByClassName(`level--bar--${i}`)[0].classList.add('level--bar--active');
+        try {
+            document.getElementsByClassName(`level--bar--${i}`)[0].classList.add('level--bar--active');
+        } catch (ex) {
+
+        }
     }
     for (let i = coloredBars + 1; i <= 9; i++) {
-        document.getElementsByClassName(`level--bar--${i}`)[0].classList.remove('level--bar--active');
+        try {
+            document.getElementsByClassName(`level--bar--${i}`)[0].classList.remove('level--bar--active');
+        } catch (ex) {
+
+        }
     }
 }
 

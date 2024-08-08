@@ -8,13 +8,12 @@ var _wheel_interval;
 var _active_page = 'loadscreen';
 var _levels = {
     1: 0,
-    2: 5000,
-    3: 25000,
-    4: 100000,
-    5: 1000000,
-    6: 10000000,
-    7: 50000000,
-    8: 100000000
+    2: 25000,
+    3: 100000,
+    4: 1000000,
+    5: 10000000,
+    6: 50000000,
+    7: 100000000
 }
 var _actives_daily_interval;
 var _actives_daily_countdown;
@@ -63,7 +62,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 116;
+    const ver = 118;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,
