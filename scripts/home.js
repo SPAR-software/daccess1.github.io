@@ -17,7 +17,7 @@ function tapEventListener(event) {
         posY = event.pageY;
     }
 
-    if (_player.current_energy > (4 + _player.player_level.level)) {
+    if (_player.current_energy >= (4 + _player.player_level.level)) {
         _player.current_energy -= (4 + _player.player_level.level);
         energyCurrent.innerHTML = _player.current_energy;
         console.log(new Date().toISOString(), 'Energy upd on tap:', _player.current_energy);
