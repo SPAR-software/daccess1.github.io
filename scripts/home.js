@@ -47,6 +47,13 @@ function tapEventListener(event) {
 document.addEventListener('loadHome', () => {
     ensureDocumentIsScrollable();
 
+    _wa.headerColor = '#01290F';
+    _wa.backgroundColor = '#01290F';
+    renderBottomMenu();
+    document.getElementById('bottomMenu').style = null;
+    document.getElementById('toast').style = null;
+    document.getElementById('body').style.backgroundColor = '#01290F';
+
     const target = document.getElementById("tapGame--game");
     homeTapContainer = document.getElementById('tapGame');
     energyCurrent = document.getElementById('level--energyValueCurrent');
