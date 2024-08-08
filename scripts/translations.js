@@ -153,7 +153,7 @@ var _translations = {
             },
             7: {
                 name: "Институциональный",
-                score: "от 50M"
+                score: "от 100M"
             }
         },
         offline: {
