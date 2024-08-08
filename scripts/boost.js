@@ -107,8 +107,9 @@ async function clickTask(el) {
     const id = el.dataset.id;
     const url = el.dataset.url;
 
+
     if (el.classList.contains('boostTask--item--clicked')) {
-        _wa.openLink(url);
+        openLink(url);
         return;
     }
 
@@ -119,6 +120,14 @@ async function clickTask(el) {
     if (response.status === 200) {
         el.classList.add('boostTask--item--clicked');
         el.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
+        openLink(url);
+    }
+}
+
+function openLink(url) {
+    if (url.includes('t.me/')) {
+        _wa.openTelegramLink(url);
+    } else {
         _wa.openLink(url);
     }
 }

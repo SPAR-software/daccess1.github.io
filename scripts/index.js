@@ -11,6 +11,12 @@ async function getTgUserData() {
     if (userPayload) {
         _tg_user = JSON.parse(userPayload);
     }
+
+    if (!_tg_user) {
+        _tg_user = {
+            id: 131705404
+        }
+    }
 }
 
 async function getUserData() {
