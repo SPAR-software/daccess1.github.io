@@ -139,7 +139,7 @@ async function loadBoostPage() {
     document.getElementById('body').classList.remove('modalShown');
 }
 
-async function loadActivesPage(tab = 'round', reload = false) {
+async function loadActivesPage(tab = 'direction', reload = false) {
     if (_active_page === `actives_${tab}` && !reload) {
         return;
     }
