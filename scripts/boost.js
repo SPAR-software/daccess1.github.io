@@ -115,9 +115,11 @@ async function clickTask(el) {
     document.getElementById('taskModal--buttonSubscribe').dataset.url = el.dataset.url;
 
     if (el.dataset.needsVerification.toString() === 'true') {
+        document.getElementById('taskModal--buttonCheckText').classList.remove('d-none');
         document.getElementById('taskModal--buttonCheck').classList.remove('d-none');
         document.getElementById('taskModal--buttonCheck').dataset.id = el.dataset.id;
     } else {
+        document.getElementById('taskModal--buttonCheckText').classList.add('d-none');
         document.getElementById('taskModal--buttonCheck').classList.add('d-none');
     }
 

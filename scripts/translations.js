@@ -108,7 +108,8 @@ var _translations = {
             spin_success: "You won:",
             spin_error: "Error",
             "button_subscribe": "Subscribe",
-            "button_check": "Check"
+            "button_check": "Check",
+            "button_check_text": "Subscribe and check"
         },
         airdrop: {
             title: "Airdrop",
@@ -228,7 +229,8 @@ var _translations = {
             spin_success: "Вы выиграли:",
             spin_error: "Ошибка",
             button_subscribe: "Подписаться",
-            button_check: "Проверить"
+            button_check: "Проверить",
+            button_check_text: "Подпишись и нажми проверить"
         },
         airdrop: {
             title: "Airdrop",
@@ -348,7 +350,8 @@ var _translations = {
             "spin_success": "Du hast gewonnen:",
             "spin_error": "Fehler",
             "button_subscribe": "Abonnieren",
-            "button_check": "Überprüfen"
+            "button_check": "Überprüfen",
+            "button_check_text": "Abonnieren und überprüfen"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -468,7 +471,8 @@ var _translations = {
             "spin_success": "Ganaste:",
             "spin_error": "Error",
             "button_subscribe": "Suscribirse",
-            "button_check": "Verificar"
+            "button_check": "Verificar",
+            "button_check_text": "Suscríbete y verifica"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -588,7 +592,8 @@ var _translations = {
             "spin_success": "Vous avez gagné:",
             "spin_error": "Erreur",
             "button_subscribe": "S'abonner",
-            "button_check": "Vérifier"
+            "button_check": "Vérifier",
+            "button_check_text": "Abonnez-vous et vérifiez"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -708,7 +713,8 @@ var _translations = {
             "spin_success": "आपने जीता:",
             "spin_error": "त्रुटि",
             "button_subscribe": "सदस्यता लें",
-            "button_check": "जाँच करें"
+            "button_check": "जाँच करें",
+            "button_check_text": "सदस्यता लें और जाँच करें"
         },
         "airdrop": {
             "title": "एयरड्रॉप",
@@ -829,7 +835,8 @@ var _translations = {
             "spin_success": "Anda menang:",
             "spin_error": "Kesalahan",
             "button_subscribe": "Berlangganan",
-            "button_check": "Periksa"
+            "button_check": "Periksa",
+            "button_check_text": "Langganan dan periksa"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -949,7 +956,8 @@ var _translations = {
             "spin_success": "Você ganhou:",
             "spin_error": "Erro",
             "button_subscribe": "Inscrever-se",
-            "button_check": "Verificar"
+            "button_check": "Verificar",
+            "button_check_text": "Inscreva-se e verifique"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1069,7 +1077,8 @@ var _translations = {
             "spin_success": "คุณชนะ:",
             "spin_error": "ข้อผิดพลาด",
             "button_subscribe": "สมัครสมาชิก",
-            "button_check": "ตรวจสอบ"
+            "button_check": "ตรวจสอบ",
+            "button_check_text": "สมัครและตรวจสอบ"
         },
         "airdrop": {
             "title": "แอร์ดรอป",
@@ -1189,7 +1198,8 @@ var _translations = {
             "spin_success": "Kazandınız:",
             "spin_error": "Hata",
             "button_subscribe": "Abone Ol",
-            "button_check": "Kontrol Et"
+            "button_check": "Kontrol Et",
+            "button_check_text": "Abone ol ve kontrol et"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1309,7 +1319,8 @@ var _translations = {
             "spin_success": "Siz yutdingiz:",
             "spin_error": "Xato",
             "button_subscribe": "Obuna bo'lish",
-            "button_check": "Tekshirish"
+            "button_check": "Tekshirish",
+            "button_check_text": "Obuna bo'ling va tekshiring"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1429,7 +1440,8 @@ var _translations = {
             "spin_success": "Bạn đã thắng:",
             "spin_error": "Lỗi",
             "button_subscribe": "Đăng ký",
-            "button_check": "Kiểm tra"
+            "button_check": "Kiểm tra",
+            "button_check_text": "Đăng ký và kiểm tra"
         },
         "airdrop": {
             "title": "Airdrop",
