@@ -104,8 +104,32 @@ async function applyPromocode() {
 }
 
 async function clickTask(el) {
+    resetOfflineTimeout();
+
+    const modal = document.getElementById('taskModal');
+    const blur = document.getElementById('taskBlur');
+    const content = document.getElementById('pageContent');
+
+    document.getElementById('taskModal--titleContent').innerHTML = el.dataset.title;
+    document.getElementById('taskModal--buttonSubscribe').dataset.id = el.dataset.id;
+    document.getElementById('taskModal--buttonSubscribe').dataset.url = el.dataset.url;
+
+    if (el.dataset.needsVerification.toString() === 'true') {
+        document.getElementById('taskModal--buttonCheck').classList.remove('d-none');
+    } else {
+        document.getElementById('taskModal--buttonCheck').classList.add('d-none');
+    }
+
+    document.getElementById('body').classList.add('modalShown');
+    blur.classList.remove('activesBlur--hidden');
+    modal.classList.remove('activesModal--hidden');
+    content.classList.add('blur');
+}
+
+async function doTask(el) {
     const id = el.dataset.id;
     const url = el.dataset.url;
+    const needsVerification = el.dataset.needsVerification.toString() === "true";
 
 
     if (el.classList.contains('boostTask--item--clicked')) {
@@ -115,13 +139,43 @@ async function clickTask(el) {
 
     resetOfflineTimeout();
 
-    const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
+    //если таске не нужна проверка, сразу шлем на бэк что она нажата
+    if (!needsVerification) {
+        const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
 
-    if (response.status === 200) {
-        el.classList.add('boostTask--item--clicked');
-        el.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
-        openLink(url);
+        if (response.status === 200) {
+            document.getElementById(`boostTask--${id}`).classList.add('d-inline-flex');
+        }
     }
+
+    openLink(url);
+}
+
+async function checkTask(el) {
+    const id = el.dataset.id;
+
+    try {
+        const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
+
+        //TODO: check if task was successful
+        const body = JSON.parse(response.body);
+        if (response.status === 200 && body.success === true) {
+            document.getElementById(`boostTask--${id}`).classList.add('d-inline-flex');
+        }
+    } catch (ex) {
+
+    }
+
+    await hideTaskModal();
+}
+
+async function hideTaskModal() {
+    resetOfflineTimeout();
+
+    document.getElementById('taskBlur').classList.add('activesBlur--hidden');
+    document.getElementById('taskModal').classList.add('activesModal--hidden');
+    document.getElementById('body').classList.remove('modalShown');
+    document.getElementById('pageContent').classList.remove('blur');
 }
 
 function openLink(url) {

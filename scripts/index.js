@@ -11,10 +11,6 @@ async function getTgUserData() {
     if (userPayload) {
         _tg_user = JSON.parse(userPayload);
     }
-
-    console.log(_tg_user);
-    console.log('platform:', _wa.platform);
-    console.log(_wa.tgWebAppPlatform);
 }
 
 async function getUserData() {

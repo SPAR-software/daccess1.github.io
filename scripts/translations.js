@@ -224,7 +224,9 @@ var _translations = {
             promocode_success: "Промокод применен! Получено",
             promocode_error: "Не удалось применить промокод",
             spin_success: "Вы выиграли:",
-            spin_error: "Ошибка"
+            spin_error: "Ошибка",
+            button_subscribe: "Подписаться",
+            button_check: "Проверить"
         },
         airdrop: {
             title: "Airdrop",

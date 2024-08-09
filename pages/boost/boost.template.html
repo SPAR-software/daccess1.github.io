@@ -49,8 +49,11 @@
 
             {{#tasks}}
             <div class="boostTask--item {{#clicked}}boostTask--item--clicked{{/clicked}}"
+                 id="boostTask--{{task_id.$oid}}"
                  data-id="{{task_id.$oid}}"
                  data-url="{{url}}"
+                 data-title="{{{title}}}"
+                 data-needs-verification="true"
                  onclick="clickTask(this)">
                 <div class="boostTask--itemIcon">
                     <img src="{{icon}}" alt="">
@@ -70,6 +73,7 @@
         </div>
     </div>
 </div>
+
 <div class="container-fluid promocode">
     <div class="row">
         <div class="col">
@@ -85,4 +89,26 @@
         </div>
     </div>
 </div>
-<script src="/scripts/boost.js"></script>
+
+<div class="activesBlur activesBlur--hidden" id="taskBlur" onclick="hideTaskModal()"></div>
+
+<div class="activesModal activesModal--hidden" id="taskModal">
+    <div class="container-fluid">
+        <div class="row activesModal--titleWrapper">
+            <div class="col d-flex justify-content-between">
+                <h3 class="activesModal--title">
+                    <span id="taskModal--titleContent"></span>
+                </h3>
+                <button class="activesModal--close" id="activesModal--close" onclick="hideTaskModal()">
+                    <img src="https://cdn.umperium.com/static/icon-close.svg" alt="close">
+                </button>
+            </div>
+        </div>
+        <div class="row z-1 position-relative">
+            <div class="col">
+                <button class="activesModal--button" id="taskModal--buttonSubscribe" data-id="" data-url="" data-needs-verification="" onclick="doTask(this)">{{text.button_subscribe}}</button>
+                <button class="activesModal--button" id="taskModal--buttonCheck" data-id="" onclick="checkTask(this)">{{text.button_check}}</button>
+            </div>
+        </div>
+    </div>
+</div>
