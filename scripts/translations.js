@@ -106,7 +106,9 @@ var _translations = {
             promocode_success: "Promocode applied! Received ",
             promocode_error: "Promocode application failed",
             spin_success: "You won:",
-            spin_error: "Error"
+            spin_error: "Error",
+            "button_subscribe": "Subscribe",
+            "button_check": "Check"
         },
         airdrop: {
             title: "Airdrop",
@@ -344,7 +346,9 @@ var _translations = {
             "promocode_success": "Promocode angewendet! Erhalten ",
             "promocode_error": "Promocode-Anwendung fehlgeschlagen",
             "spin_success": "Du hast gewonnen:",
-            "spin_error": "Fehler"
+            "spin_error": "Fehler",
+            "button_subscribe": "Abonnieren",
+            "button_check": "Überprüfen"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -462,7 +466,9 @@ var _translations = {
             "promocode_success": "¡Código promocional aplicado! Recibido ",
             "promocode_error": "Falló la aplicación del código promocional",
             "spin_success": "Ganaste:",
-            "spin_error": "Error"
+            "spin_error": "Error",
+            "button_subscribe": "Suscribirse",
+            "button_check": "Verificar"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -580,7 +586,9 @@ var _translations = {
             "promocode_success": "Code promo appliqué! Reçu ",
             "promocode_error": "Échec de l'application du code promo",
             "spin_success": "Vous avez gagné:",
-            "spin_error": "Erreur"
+            "spin_error": "Erreur",
+            "button_subscribe": "S'abonner",
+            "button_check": "Vérifier"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -698,7 +706,9 @@ var _translations = {
             "promocode_success": "प्रोमोकोड लागू हुआ! प्राप्त ",
             "promocode_error": "प्रोमोकोड लागू करना विफल",
             "spin_success": "आपने जीता:",
-            "spin_error": "त्रुटि"
+            "spin_error": "त्रुटि",
+            "button_subscribe": "सदस्यता लें",
+            "button_check": "जाँच करें"
         },
         "airdrop": {
             "title": "एयरड्रॉप",
@@ -817,7 +827,9 @@ var _translations = {
             "promocode_success": "Kode promo diterapkan! Diterima ",
             "promocode_error": "Penerapan kode promo gagal",
             "spin_success": "Anda menang:",
-            "spin_error": "Kesalahan"
+            "spin_error": "Kesalahan",
+            "button_subscribe": "Berlangganan",
+            "button_check": "Periksa"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -935,7 +947,9 @@ var _translations = {
             "promocode_success": "Código promocional aplicado! Recebido ",
             "promocode_error": "Falha na aplicação do código promocional",
             "spin_success": "Você ganhou:",
-            "spin_error": "Erro"
+            "spin_error": "Erro",
+            "button_subscribe": "Inscrever-se",
+            "button_check": "Verificar"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1053,7 +1067,9 @@ var _translations = {
             "promocode_success": "ใช้รหัสโปรโมชั่นแล้ว! ได้รับ ",
             "promocode_error": "การใช้รหัสโปรโมชั่นล้มเหลว",
             "spin_success": "คุณชนะ:",
-            "spin_error": "ข้อผิดพลาด"
+            "spin_error": "ข้อผิดพลาด",
+            "button_subscribe": "สมัครสมาชิก",
+            "button_check": "ตรวจสอบ"
         },
         "airdrop": {
             "title": "แอร์ดรอป",
@@ -1171,7 +1187,9 @@ var _translations = {
             "promocode_success": "Promosyon kodu uygulandı! Aldınız ",
             "promocode_error": "Promosyon kodu uygulama hatası",
             "spin_success": "Kazandınız:",
-            "spin_error": "Hata"
+            "spin_error": "Hata",
+            "button_subscribe": "Abone Ol",
+            "button_check": "Kontrol Et"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1289,7 +1307,9 @@ var _translations = {
             "promocode_success": "Promokod muvaffaqiyatli qo‘llandi! Olingan ",
             "promocode_error": "Promokodni qo‘llashda xatolik",
             "spin_success": "Siz yutdingiz:",
-            "spin_error": "Xato"
+            "spin_error": "Xato",
+            "button_subscribe": "Obuna bo'lish",
+            "button_check": "Tekshirish"
         },
         "airdrop": {
             "title": "Airdrop",
@@ -1407,7 +1427,9 @@ var _translations = {
             "promocode_success": "Mã khuyến mãi đã được áp dụng! Nhận được ",
             "promocode_error": "Áp dụng mã khuyến mãi thất bại",
             "spin_success": "Bạn đã thắng:",
-            "spin_error": "Lỗi"
+            "spin_error": "Lỗi",
+            "button_subscribe": "Đăng ký",
+            "button_check": "Kiểm tra"
         },
         "airdrop": {
             "title": "Airdrop",
