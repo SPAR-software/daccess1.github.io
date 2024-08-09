@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 } );
 
 document.addEventListener('preload', async () => {
+    if (_wa.platform !== 'android' && _wa.platform !== 'ios') {
+        console.log('App is launched on desktop');
+        _wa.headerColor = '#01290F';
+        _wa.backgroundColor = '#01290F';
+        document.getElementById('body').style.backgroundColor = '#01290F';
+        document.getElementById('pageContent').innerHTML = '<img src="https://cdn.umperium.com/static/web-qr-code.webp" alt="qr-code" style="max-width: 80vw; max-height: 80vh; display: block; margin: 10vh auto">';
+
+        return;
+    }
+
     _wa.BackButton.onClick(() => {
         document.getElementById('body').classList.remove('modalShown');
         document.getElementById('pageContent').classList.remove('blur');
@@ -62,7 +72,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 120;
+    const ver = 121;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

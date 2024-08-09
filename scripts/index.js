@@ -12,11 +12,9 @@ async function getTgUserData() {
         _tg_user = JSON.parse(userPayload);
     }
 
-    if (!_tg_user) {
-        _tg_user = {
-            id: 131705404
-        }
-    }
+    console.log(_tg_user);
+    console.log('platform:', _wa.platform);
+    console.log(_wa.tgWebAppPlatform);
 }
 
 async function getUserData() {
