@@ -2,5 +2,5 @@ version: "3.9"
 
 services:
   umperium_frontend:
-    image: cr.yandex/crprep7mlarphamjggv1/frontend/umperium-frontend:1.4.0
+    image: cr.yandex/crprep7mlarphamjggv1/frontend/umperium-frontend:1.4.1
     build: .

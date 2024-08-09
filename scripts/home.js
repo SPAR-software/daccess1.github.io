@@ -20,7 +20,6 @@ function tapEventListener(event) {
     if (_player.current_energy >= (4 + _player.player_level.level)) {
         _player.current_energy -= (4 + _player.player_level.level);
         energyCurrent.innerHTML = _player.current_energy;
-        console.log(new Date().toISOString(), 'Energy upd on tap:', _player.current_energy);
 
         _player.balance += 4 + _player.player_level.level;
         homePlayerBalance.innerHTML = formatBalance(_player.balance);
@@ -89,9 +88,6 @@ document.addEventListener('loadHome', () => {
             });
             const body = JSON.parse(resp.body);
 
-            // _player.current_energy = body.new_energy;
-            // energyCurrent.innerHTML = _player.current_energy;
-            // console.log(new Date().toISOString(), 'Energy upd after taps:', body.new_energy);
             if (_player.current_energy < _player.max_energy) {
                 _player.current_energy += 3;
 
@@ -100,7 +96,6 @@ document.addEventListener('loadHome', () => {
                 }
 
                 energyCurrent.innerHTML = _player.current_energy;
-                console.log(new Date().toISOString(), 'Energy upd while tapping:',_player.current_energy);
             }
             lastBalanceUpdate = window.performance.now();
         } else
@@ -114,7 +109,6 @@ document.addEventListener('loadHome', () => {
                 if (_player.current_energy < body.energy) {
                     _player.current_energy = body.energy;
                     energyCurrent.innerHTML = _player.current_energy;
-                    console.log('Energy upd max:', body.new_energy);
                 }
                 if (_player.balance < body.balance) {
                     _player.balance = body.balance;
@@ -131,7 +125,6 @@ document.addEventListener('loadHome', () => {
             const body = await req.json();
 
             if (_player.current_energy < body.energy && tapsCount === 0) {
-                console.log(new Date().toISOString(), 'Energy upd regular:', body.energy);
                 _player.current_energy = body.energy;
                 energyCurrent.innerHTML = _player.current_energy;
             }

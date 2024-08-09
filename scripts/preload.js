@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('preload', async () => {
     if (_wa.platform !== 'android' && _wa.platform !== 'ios') {
-        console.log('App is launched on desktop');
         _wa.headerColor = '#01290F';
         _wa.backgroundColor = '#01290F';
         document.getElementById('body').style.backgroundColor = '#01290F';
@@ -72,7 +71,7 @@ document.addEventListener('preload', async () => {
 });
 
 async function preload() {
-    const ver = 122;
+    const ver = 123;
 
     const scripts = [
         `/scripts/index.js?v=${ver}`,

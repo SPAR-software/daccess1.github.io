@@ -145,8 +145,12 @@ async function doTask(el) {
         const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
 
         if (response.status === 200) {
-            document.getElementById(`boostTask--${id}`).classList.add('d-inline-flex');
+            const taskEl = document.getElementById(`boostTask--${id}`);
+            taskEl.classList.add('boostTask--item--clicked');
+            taskEl.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
         }
+
+        await hideTaskModal();
     }
 
     openLink(url);
@@ -158,10 +162,11 @@ async function checkTask(el) {
     try {
         const response = await backendAPIRequest(`/player/${_tg_user.id}/tasks/${id}`, "post", null);
 
-        //TODO: check if task was successful
         const body = JSON.parse(response.body);
-        if (response.status === 200 && body.success === true) {
-            document.getElementById(`boostTask--${id}`).classList.add('d-inline-flex');
+        if (response.status === 200 && body.status === "success") {
+            const taskEl = document.getElementById(`boostTask--${id}`);
+            taskEl.classList.add('boostTask--item--clicked');
+            taskEl.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
         }
     } catch (ex) {
 

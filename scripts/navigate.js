@@ -39,7 +39,7 @@ async function loadHomePage(reload = false) {
         }
     }
 
-    if (offline_income === 0) {
+    if (!offline_income || offline_income === 0) {
         _show_offline_income = false;
     }
 
