@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: umperium-game-frontend
-          image: cr.yandex/crprep7mlarphamjggv1/frontend/umperium-frontend:1.4.1
+          image: cr.yandex/crprep7mlarphamjggv1/frontend/umperium-frontend:1.4.2
           imagePullPolicy: Always
           resources:
             limits:
