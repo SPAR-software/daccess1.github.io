@@ -153,7 +153,7 @@ async function doTask(el) {
             taskEl.getElementsByClassName('boostTask--itemCheck')[0].classList.add('d-inline-flex');
         }
 
-        await hideTaskModal();
+        // await hideTaskModal();
     }
 
     openLink(url);
