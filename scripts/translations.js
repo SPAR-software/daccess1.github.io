@@ -107,6 +107,7 @@ var _translations = {
             promocode_error: "Promocode application failed",
             spin_success: "You won:",
             spin_error: "Error",
+            "button_subscribe_text": "Subscribe to the channel",
             "button_subscribe": "Subscribe",
             "button_check": "Check",
             "button_check_text": "Subscribe and check"
@@ -228,6 +229,7 @@ var _translations = {
             promocode_error: "Не удалось применить промокод",
             spin_success: "Вы выиграли:",
             spin_error: "Ошибка",
+            button_subscribe_text: "Подпишитесь на канал",
             button_subscribe: "Подписаться",
             button_check: "Проверить",
             button_check_text: "Подпишись и нажми проверить"
@@ -349,6 +351,7 @@ var _translations = {
             "promocode_error": "Promocode-Anwendung fehlgeschlagen",
             "spin_success": "Du hast gewonnen:",
             "spin_error": "Fehler",
+            "button_subscribe_text": "Abonnieren Sie den Kanal",
             "button_subscribe": "Abonnieren",
             "button_check": "Überprüfen",
             "button_check_text": "Abonnieren und überprüfen"
@@ -470,6 +473,7 @@ var _translations = {
             "promocode_error": "Falló la aplicación del código promocional",
             "spin_success": "Ganaste:",
             "spin_error": "Error",
+            "button_subscribe_text": "Suscríbete al canal",
             "button_subscribe": "Suscribirse",
             "button_check": "Verificar",
             "button_check_text": "Suscríbete y verifica"
@@ -591,6 +595,7 @@ var _translations = {
             "promocode_error": "Échec de l'application du code promo",
             "spin_success": "Vous avez gagné:",
             "spin_error": "Erreur",
+            "button_subscribe_text": "Abonnez-vous à la chaîne",
             "button_subscribe": "S'abonner",
             "button_check": "Vérifier",
             "button_check_text": "Abonnez-vous et vérifiez"
@@ -712,6 +717,7 @@ var _translations = {
             "promocode_error": "प्रोमोकोड लागू करना विफल",
             "spin_success": "आपने जीता:",
             "spin_error": "त्रुटि",
+            "button_subscribe_text": "चैनल को सब्सक्राइब करें",
             "button_subscribe": "सदस्यता लें",
             "button_check": "जाँच करें",
             "button_check_text": "सदस्यता लें और जाँच करें"
@@ -834,6 +840,7 @@ var _translations = {
             "promocode_error": "Penerapan kode promo gagal",
             "spin_success": "Anda menang:",
             "spin_error": "Kesalahan",
+            "button_subscribe_text": "Berlangganan saluran",
             "button_subscribe": "Berlangganan",
             "button_check": "Periksa",
             "button_check_text": "Langganan dan periksa"
@@ -955,6 +962,7 @@ var _translations = {
             "promocode_error": "Falha na aplicação do código promocional",
             "spin_success": "Você ganhou:",
             "spin_error": "Erro",
+            "button_subscribe_text": "Inscreva-se no canal",
             "button_subscribe": "Inscrever-se",
             "button_check": "Verificar",
             "button_check_text": "Inscreva-se e verifique"
@@ -1076,6 +1084,7 @@ var _translations = {
             "promocode_error": "การใช้รหัสโปรโมชั่นล้มเหลว",
             "spin_success": "คุณชนะ:",
             "spin_error": "ข้อผิดพลาด",
+            "button_subscribe_text": "สมัครสมาชิกช่อง",
             "button_subscribe": "สมัครสมาชิก",
             "button_check": "ตรวจสอบ",
             "button_check_text": "สมัครและตรวจสอบ"
@@ -1197,6 +1206,7 @@ var _translations = {
             "promocode_error": "Promosyon kodu uygulama hatası",
             "spin_success": "Kazandınız:",
             "spin_error": "Hata",
+            "button_subscribe_text": "Kanalı takip et",
             "button_subscribe": "Abone Ol",
             "button_check": "Kontrol Et",
             "button_check_text": "Abone ol ve kontrol et"
@@ -1318,6 +1328,7 @@ var _translations = {
             "promocode_error": "Promokodni qo‘llashda xatolik",
             "spin_success": "Siz yutdingiz:",
             "spin_error": "Xato",
+            "button_subscribe_text": "Kanalga obuna bo'ling",
             "button_subscribe": "Obuna bo'lish",
             "button_check": "Tekshirish",
             "button_check_text": "Obuna bo'ling va tekshiring"
@@ -1439,6 +1450,7 @@ var _translations = {
             "promocode_error": "Áp dụng mã khuyến mãi thất bại",
             "spin_success": "Bạn đã thắng:",
             "spin_error": "Lỗi",
+            "button_subscribe_text": "Đăng ký kênh",
             "button_subscribe": "Đăng ký",
             "button_check": "Kiểm tra",
             "button_check_text": "Đăng ký và kiểm tra"

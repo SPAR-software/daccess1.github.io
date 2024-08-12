@@ -110,15 +110,15 @@ async function clickTask(el) {
     const blur = document.getElementById('taskBlur');
     const content = document.getElementById('pageContent');
 
-    document.getElementById('taskModal--titleContent').innerHTML = "Подпишитесь на канал";
+    // document.getElementById('taskModal--titleContent').innerHTML = "Подпишитесь на канал";
     // document.getElementById('taskModal--titleContent').innerHTML = el.dataset.title;
     document.getElementById('taskModal--buttonSubscribe').dataset.id = el.dataset.id;
     document.getElementById('taskModal--buttonSubscribe').dataset.url = el.dataset.url;
 
     // if (el.dataset.needsVerification.toString() === 'true') {
-        document.getElementById('taskModal--buttonCheckText').classList.remove('d-none');
-        document.getElementById('taskModal--buttonCheck').classList.remove('d-none');
-        document.getElementById('taskModal--buttonCheck').dataset.id = el.dataset.id;
+        // document.getElementById('taskModal--buttonCheckText').classList.remove('d-none');
+        // document.getElementById('taskModal--buttonCheck').classList.remove('d-none');
+    document.getElementById('taskModal--buttonCheck').dataset.id = el.dataset.id;
     // } else {
     //     document.getElementById('taskModal--buttonCheckText').classList.add('d-none');
     //     document.getElementById('taskModal--buttonCheck').classList.add('d-none');
