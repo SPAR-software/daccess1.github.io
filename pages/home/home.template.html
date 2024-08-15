@@ -1,277 +1,324 @@
 <div class="container-fluid screenTopNotification" id="screenTopNotification">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6 d-flex justify-content-center">
-            <div class="screenTopNotification--container" onclick="showLevelModal()">
-                <span class="screenTopNotification--text" id="screenTopNotification--boostCountdown">{{name}}</span>
-            </div>
-        </div>
-        <div class="col-3 d-flex justify-content-end">
-            <div class="screenTopNotification--container screenTopNotification--container-lang d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#langModal">
-                <span data-bs-toggle="modal" data-bs-target="#langModal" class="screenTopNotification--text screenTopNotification--text--button text-capitalize">{{language_code}}</span>
-
-                <img src="https://cdn.umperium.com/static/icon-arrow-down.svg" alt="arrow">
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 d-flex justify-content-center">
+      <div class="screenTopNotification--container" onclick="showLevelModal()">
+        <span class="screenTopNotification--text" id="screenTopNotification--boostCountdown">{{name}}</span>
+      </div>
     </div>
+    <div class="col-3 d-flex justify-content-end">
+      <div class="screenTopNotification--container screenTopNotification--container-lang d-flex align-items-center"
+        data-bs-toggle="modal" data-bs-target="#langModal">
+        <span data-bs-toggle="modal" data-bs-target="#langModal"
+          class="screenTopNotification--text screenTopNotification--text--button text-capitalize">{{language_code}}</span>
+
+        <img src="https://cdn.umperium.com/static/icon-arrow-down.svg" alt="arrow">
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container-fluid screenHeader">
-    <div class="row">
-        <div class="col">
-            <h1 class="screenHeader--title"><span id="screenHeader--balance">{{balance}}</span> <img src="https://cdn.umperium.com/static/icon-coin.svg" class="screenHeader--titleIcon" alt="coin"></h1>
-        </div>
+  <div class="row">
+    <div class="col">
+      <h1 class="screenHeader--title"><span id="screenHeader--balance">{{balance}}</span> <img
+          src="https://cdn.umperium.com/static/icon-coin.svg" class="screenHeader--titleIcon" alt="coin"></h1>
     </div>
+  </div>
 </div>
 
 <div class="container-fluid tapGame" id="tapGame">
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            <div class="tapGame--container">
-                <button id="tapGame--game" class="tapGame--game">
-                    <img src="https://cdn.umperium.com/static/character-level-{{level}}.png.webp" srcset="https://cdn.umperium.com/static/character-level-{{level}}@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-{{level}}@3x.png.webp 3x" alt="player" class="tapGame--player tapGame--player--level-{{level}}" id="tapGame--player" >
-                </button>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="tapGame--container">
+        <button id="tapGame--game" class="tapGame--game">
+          <img src="https://cdn.umperium.com/static/character-level-{{level}}.png.webp"
+            srcset="https://cdn.umperium.com/static/character-level-{{level}}@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-{{level}}@3x.png.webp 3x"
+            alt="player" class="tapGame--player tapGame--player--level-{{level}}" id="tapGame--player">
+        </button>
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="container-fluid level">
-    <div class="row d-flex">
-        <div class="col-5 d-flex justify-content-start align-items-end">
-            <div class="level--energy d-flex">
-                <img src="https://cdn.umperium.com/static/icon-lightning.svg" alt="lightning" class="level--energyIcon">
-                <p class="level--energyValue">
-                    <span class="level--energyValueCurrent" id="level--energyValueCurrent">{{current_energy}}</span>/
-                    <span class="level--energyValueMax">{{max_energy}}</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-7 d-flex align-items-center justify-content-end" onclick="showLevelModal()">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <div class="level--barsContainer">
-                    <div class="level--bar level--bar--1"></div>
-                    <div class="level--bar level--bar--2"></div>
-                    <div class="level--bar level--bar--3"></div>
-                    <div class="level--bar level--bar--4"></div>
-                    <div class="level--bar level--bar--5"></div>
-                    <div class="level--bar level--bar--6"></div>
-                    <div class="level--bar level--bar--7"></div>
-                    <div class="level--bar level--bar--8"></div>
-                    <div class="level--bar level--bar--9"></div>
-                </div>
-                <div class="level--info d-inline-flex">
-                    <span class="level--infoNumber">{{text.level}} <span id="level--infoNumberValue">{{level}}</span></span>
-                    <span class="level--infoDivider">|</span>
-                    <span class="level--infoPNL">PNL % {{pnl}}</span>
-                </div>
-            </div>
-        </div>
+  <div class="row d-flex">
+    <div class="col-5 d-flex justify-content-start align-items-end">
+      <div class="level--energy d-flex">
+        <img src="https://cdn.umperium.com/static/icon-lightning.svg" alt="lightning" class="level--energyIcon">
+        <p class="level--energyValue">
+          <span class="level--energyValueCurrent" id="level--energyValueCurrent">{{current_energy}}</span>/
+          <span class="level--energyValueMax">{{max_energy}}</span>
+        </p>
+      </div>
     </div>
+    <div class="col-7 d-flex align-items-center justify-content-end" onclick="showLevelModal()">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="level--barsContainer">
+          <div class="level--bar level--bar--1"></div>
+          <div class="level--bar level--bar--2"></div>
+          <div class="level--bar level--bar--3"></div>
+          <div class="level--bar level--bar--4"></div>
+          <div class="level--bar level--bar--5"></div>
+          <div class="level--bar level--bar--6"></div>
+          <div class="level--bar level--bar--7"></div>
+          <div class="level--bar level--bar--8"></div>
+          <div class="level--bar level--bar--9"></div>
+        </div>
+        <div class="level--info d-inline-flex">
+          <span class="level--infoNumber">{{text.level}} <span id="level--infoNumberValue">{{level}}</span></span>
+          <span class="level--infoDivider">|</span>
+          <span class="level--infoPNL">PNL % {{pnl}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container-fluid levelModal d-none" id="levelModal">
-    <div class="row">
-        <div class="col">
-            <!-- Slider main container -->
-            <div class="swiper levelModal--carousel">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Level 1 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-1.png.webp" srcset="https://cdn.umperium.com/static/character-level-1@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-1@3x.png.webp 3x" class="d-block" alt="level-1">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 1 - {{text_levels.1.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--1" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0">
-                                    <span class="progress--levelText"></span>
-                                </div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--1">{{text_levels.1.score}}</div>
-                        </div>
-                    </div>
-                    <!-- Level 2 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-2.png.webp" srcset="https://cdn.umperium.com/static/character-level-2@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-2@3x.png.webp 3x" class="d-block" alt="level-2">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 2 - {{text_levels.2.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--2" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0">
-                                    <span class="progress--levelText"></span>
-                                </div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--2">{{text_levels.2.score}}</div>
-                        </div>
-                    </div>
-                    <!-- Level 3 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-3.png.webp" srcset="https://cdn.umperium.com/static/character-level-3@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-3@3x.png.webp 3x" class="d-block" alt="level-3">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 3 - {{text_levels.3.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--3" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span></div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--3">{{text_levels.3.score}}</div>
-                        </div>
-                    </div>
-                    <!-- Level 4 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-4.png.webp" srcset="https://cdn.umperium.com/static/character-level-4@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-4@3x.png.webp 3x" class="d-block" alt="level-4">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 4 - {{text_levels.4.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--4" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span></div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--4">{{text_levels.4.score}}</div>
-                        </div>
-                    </div>
-                    <!-- Level 5 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-5.png.webp" srcset="https://cdn.umperium.com/static/character-level-5@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-5@3x.png.webp 3x" class="d-block" alt="level-5">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 5 - {{text_levels.5.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--5" role="progressbar" aria-label="Level" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span></div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--5">{{text_levels.5.score}}</div>
-                        </div>
-                    </div>
-                    <!-- Level 6 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-6.png.webp" srcset="https://cdn.umperium.com/static/character-level-6@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-6@3x.png.webp 3x" class="d-block" alt="level-6">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 6 - {{text_levels.6.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--6" role="progressbar" aria-label="Level" aria-valuenow="26" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span></div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--6">{{text_levels.6.score}}</div>
-                        </div>
-                    </div>
-                    <!-- Level 7 -->
-                    <div class="swiper-slide">
-                        <div class="levelModal--carouselImageWrapper">
-                            <img src="https://cdn.umperium.com/static/character-level-7.png.webp" srcset="https://cdn.umperium.com/static/character-level-7@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-7@3x.png.webp 3x" class="d-block" alt="level-7">
-                        </div>
-                        <p class="levelModal--carouselText">{{text.level}} 7 - {{text_levels.7.name}}</p>
-                        <div class="levelModal--carouselLevel">
-                            <div class="progress progress--level d-none" id="progress--level--7" role="progressbar" aria-label="Level" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span></div>
-                            </div>
-                            <div class="progress--minScore" id="progress--minScore--7">{{text_levels.7.score}}</div>
-                        </div>
-                    </div>
-                    <!-- /levels -->
+  <div class="row">
+    <div class="col">
+      <!-- Slider main container -->
+      <div class="swiper levelModal--carousel">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Level 1 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-1.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-1@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-1@3x.png.webp 3x"
+                class="d-block" alt="level-1">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 1 - {{text_levels.1.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--1" role="progressbar" aria-label="Level"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0">
+                  <span class="progress--levelText"></span>
                 </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--1">{{text_levels.1.score}}</div>
+            </div>
+          </div>
+          <!-- Level 2 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-2.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-2@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-2@3x.png.webp 3x"
+                class="d-block" alt="level-2">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 2 - {{text_levels.2.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--2" role="progressbar" aria-label="Level"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0">
+                  <span class="progress--levelText"></span>
+                </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--2">{{text_levels.2.score}}</div>
+            </div>
+          </div>
+          <!-- Level 3 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-3.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-3@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-3@3x.png.webp 3x"
+                class="d-block" alt="level-3">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 3 - {{text_levels.3.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--3" role="progressbar" aria-label="Level"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span>
+                </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--3">{{text_levels.3.score}}</div>
+            </div>
+          </div>
+          <!-- Level 4 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-4.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-4@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-4@3x.png.webp 3x"
+                class="d-block" alt="level-4">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 4 - {{text_levels.4.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--4" role="progressbar" aria-label="Level"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span>
+                </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--4">{{text_levels.4.score}}</div>
+            </div>
+          </div>
+          <!-- Level 5 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-5.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-5@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-5@3x.png.webp 3x"
+                class="d-block" alt="level-5">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 5 - {{text_levels.5.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--5" role="progressbar" aria-label="Level"
+                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span>
+                </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--5">{{text_levels.5.score}}</div>
+            </div>
+          </div>
+          <!-- Level 6 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-6.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-6@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-6@3x.png.webp 3x"
+                class="d-block" alt="level-6">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 6 - {{text_levels.6.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--6" role="progressbar" aria-label="Level"
+                aria-valuenow="26" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span>
+                </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--6">{{text_levels.6.score}}</div>
+            </div>
+          </div>
+          <!-- Level 7 -->
+          <div class="swiper-slide">
+            <div class="levelModal--carouselImageWrapper">
+              <img src="https://cdn.umperium.com/static/character-level-7.png.webp"
+                srcset="https://cdn.umperium.com/static/character-level-7@2x.png.webp 2x, https://cdn.umperium.com/static/character-level-7@3x.png.webp 3x"
+                class="d-block" alt="level-7">
+            </div>
+            <p class="levelModal--carouselText">{{text.level}} 7 - {{text_levels.7.name}}</p>
+            <div class="levelModal--carouselLevel">
+              <div class="progress progress--level d-none" id="progress--level--7" role="progressbar" aria-label="Level"
+                aria-valuenow="27" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar overflow-visible" style="width: 0"><span class="progress--levelText"></span>
+                </div>
+              </div>
+              <div class="progress--minScore" id="progress--minScore--7">{{text_levels.7.score}}</div>
+            </div>
+          </div>
+          <!-- /levels -->
+        </div>
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="levelModal--ranking">
-                {{text.ranking}}:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
-            </div>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="levelModal--ranking">
+        {{text.ranking}}:&nbsp;<span class="levelModal--rankingCurrent" id="levelModal--rankingCurrent"></span>/<span
+          class="levelModal--rankingTotal" id="levelModal--rankingTotal"></span>
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="levelModal--stats">
-                <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">{{text.investments_count}}</span>
-                    <span class="levelModal--statsValue" id="levelModal--statsValue--totalActives"></span>
-                </div>
-                <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">{{text.investments_const}}</span>
-                    <span class="levelModal--statsValue"><span id="levelModal--statsValue--totalSpent"></span> <img src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin"></span>
-                </div>
-                <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">{{text.profit}}</span>
-                    <span class="levelModal--statsValue"><span id="levelModal--statsValue--totalIncome"></span>  <img src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin"></span>
-                </div>
-                <div class="levelModal--statsRow">
-                    <span class="levelModal--statsText">{{text.pnl}}</span>
-                    <span class="levelModal--statsValue" id="levelModal--statsValue--pnl"></span>
-                </div>
-                <div class="levelModal--statsRow levelModal--statsRow--actives">
-                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">{{text.rounds}}</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--rounds"></span>
-                    </div>
-                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">{{text.directions}}</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--directions"></span>
-                    </div>
-                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">{{text.projects}}</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--projects"></span>
-                    </div>
-                    <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <span class="levelModal--statsText">{{text.specials}}</span>
-                        <span class="levelModal--statsValue" id="levelModal--statsValue--specials">30%</span>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="levelModal--stats">
+        <div class="levelModal--statsRow">
+          <span class="levelModal--statsText">{{text.investments_count}}</span>
+          <span class="levelModal--statsValue" id="levelModal--statsValue--totalActives"></span>
         </div>
+        <div class="levelModal--statsRow">
+          <span class="levelModal--statsText">{{text.investments_const}}</span>
+          <span class="levelModal--statsValue"><span id="levelModal--statsValue--totalSpent"></span> <img
+              src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin"></span>
+        </div>
+        <div class="levelModal--statsRow">
+          <span class="levelModal--statsText">{{text.profit}}</span>
+          <span class="levelModal--statsValue"><span id="levelModal--statsValue--totalIncome"></span> <img
+              src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin"></span>
+        </div>
+        <div class="levelModal--statsRow">
+          <span class="levelModal--statsText">{{text.pnl}}</span>
+          <span class="levelModal--statsValue" id="levelModal--statsValue--pnl"></span>
+        </div>
+        <div class="levelModal--statsRow levelModal--statsRow--actives">
+          <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <span class="levelModal--statsText">{{text.rounds}}</span>
+            <span class="levelModal--statsValue" id="levelModal--statsValue--rounds"></span>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <span class="levelModal--statsText">{{text.directions}}</span>
+            <span class="levelModal--statsValue" id="levelModal--statsValue--directions"></span>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <span class="levelModal--statsText">{{text.projects}}</span>
+            <span class="levelModal--statsValue" id="levelModal--statsValue--projects"></span>
+          </div>
+          <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+            <span class="levelModal--statsText">{{text.specials}}</span>
+            <span class="levelModal--statsValue" id="levelModal--statsValue--specials">30%</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- Modal -->
 <div class="modal fade" id="langModal" tabindex="-1" aria-labelledby="langModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="langModalLabel">{{text.change_lang}}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    <img src="https://cdn.umperium.com/static/icon-close.svg" alt="close">
-                </button>
-            </div>
-            <div class="modal-body">
-                <a class="changeLangButton changeLangButton--en" data-lang="en" onclick="changeLanguage(this)" data-bs-dismiss="modal">English</a>
-                <a class="changeLangButton changeLangButton--ru" data-lang="ru" onclick="changeLanguage(this)" data-bs-dismiss="modal">Русский</a>
-                <a class="changeLangButton changeLangButton--de" data-lang="de" onclick="changeLanguage(this)" data-bs-dismiss="modal">Deutsch</a>
-                <a class="changeLangButton changeLangButton--es" data-lang="es" onclick="changeLanguage(this)" data-bs-dismiss="modal">Español</a>
-                <a class="changeLangButton changeLangButton--fr" data-lang="fr" onclick="changeLanguage(this)" data-bs-dismiss="modal">Françias</a>
-                <a class="changeLangButton changeLangButton--hi" data-lang="hi" onclick="changeLanguage(this)" data-bs-dismiss="modal">हिन्दी</a>
-                <a class="changeLangButton changeLangButton--id" data-lang="id" onclick="changeLanguage(this)" data-bs-dismiss="modal">Bahasa Indonesia</a>
-                <a class="changeLangButton changeLangButton--pt" data-lang="pt" onclick="changeLanguage(this)" data-bs-dismiss="modal">Português</a>
-                <a class="changeLangButton changeLangButton--th" data-lang="th" onclick="changeLanguage(this)" data-bs-dismiss="modal">ภาษาไทย</a>
-                <a class="changeLangButton changeLangButton--tr" data-lang="tr" onclick="changeLanguage(this)" data-bs-dismiss="modal">Türkçe</a>
-                <a class="changeLangButton changeLangButton--uz" data-lang="uz" onclick="changeLanguage(this)" data-bs-dismiss="modal">O'zbekcha</a>
-                <a class="changeLangButton changeLangButton--vi" data-lang="vi" onclick="changeLanguage(this)" data-bs-dismiss="modal">Tiếng Việt</a>
-            </div>
-        </div>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="langModalLabel">{{text.change_lang}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <img src="https://cdn.umperium.com/static/icon-close.svg" alt="close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <a class="changeLangButton changeLangButton--en" data-lang="en" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">English</a>
+        <a class="changeLangButton changeLangButton--ru" data-lang="ru" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Русский</a>
+        <a class="changeLangButton changeLangButton--de" data-lang="de" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Deutsch</a>
+        <a class="changeLangButton changeLangButton--es" data-lang="es" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Español</a>
+        <a class="changeLangButton changeLangButton--fr" data-lang="fr" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Françias</a>
+        <a class="changeLangButton changeLangButton--hi" data-lang="hi" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">हिन्दी</a>
+        <a class="changeLangButton changeLangButton--id" data-lang="id" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Bahasa Indonesia</a>
+        <a class="changeLangButton changeLangButton--pt" data-lang="pt" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Português</a>
+        <a class="changeLangButton changeLangButton--th" data-lang="th" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">ภาษาไทย</a>
+        <a class="changeLangButton changeLangButton--tr" data-lang="tr" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Türkçe</a>
+        <a class="changeLangButton changeLangButton--uz" data-lang="uz" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">O'zbekcha</a>
+        <a class="changeLangButton changeLangButton--vi" data-lang="vi" onclick="changeLanguage(this)"
+          data-bs-dismiss="modal">Tiếng Việt</a>
+      </div>
     </div>
+  </div>
 </div>
 
 {{#show_offline_income}}
 <div class="incomeModal--backdrop" id="incomeModal--backdrop" onclick="hideIncomeModal()"></div>
 <div class="incomeModal" id="incomeModal">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <h3 class="incomeModal--title">{{text.offline_income_title}}</h3>
-                <div class="incomeModal--valueWrapper d-flex justify-content-center">
-                    <div class="incomeModal--value">{{offline_income}} <img src="https://cdn.umperium.com/static/icon-coin.svg" alt="coin"></div>
-                </div>
-                <p class="incomeModal--cta">{{text.offline_income_cta}}</p>
-                <a class="btn btn-primary incomeModal--button" onclick="hideIncomeModal()">{{text.offline_income_close}}</a>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h3 class="incomeModal--title">{{text.offline_income_title}}</h3>
+        <div class="incomeModal--valueWrapper d-flex justify-content-center">
+          <div class="incomeModal--value">{{offline_income}} <img src="https://cdn.umperium.com/static/icon-coin.svg"
+              alt="coin"></div>
         </div>
+        <p class="incomeModal--cta">{{text.offline_income_cta}}</p>
+        <a class="btn btn-primary incomeModal--button" onclick="hideIncomeModal()">{{text.offline_income_close}}</a>
+      </div>
     </div>
+  </div>
 </div>
 {{/show_offline_income}}
 

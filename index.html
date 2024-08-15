@@ -1,126 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <meta name="description" content="App description">
-    <meta name="author" content="Doe">
-    <meta property="og:type" content="application/http">
-    <meta property="og:url" content="https://t.me/big_bad_bot">
-    <meta property="og:title" content="OG App title">
-    <meta property="og:description" content="OG App description">
-    <meta property="og:image" content="https://cdn.umperium.com/static/character-level-1.png.webp">
-    <title>Umperium</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta name="description" content="App description">
+  <meta name="author" content="Doe">
+  <meta property="og:type" content="application/http">
+  <meta property="og:url" content="https://t.me/big_bad_bot">
+  <meta property="og:title" content="OG App title">
+  <meta property="og:description" content="OG App description">
+  <meta property="og:image" content="https://cdn.umperium.com/static/character-level-1.png.webp">
+  <title>Umperium</title>
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <style>
-        body.wrapper {
-            padding: 0;
-            margin: 0;
-            background-color: #01290F;
-            font-family: "Open Sans", sans-serif;
-            color: #FFF;
-            width: 100%;
-            max-width: 100%;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <style>
+    body.wrapper {
+      padding: 0;
+      margin: 0;
+      background-color: #01290F;
+      font-family: "Open Sans", sans-serif;
+      color: #FFF;
+      width: 100%;
+      max-width: 100%;
 
-            * {
-                box-sizing: border-box;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-        }
-        html, body, div, a, p, h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-            padding: 0;
-        }
-        a {
-            text-decoration: none !important;
-        }
-    </style>
+      * {
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
+
+    html,
+    body,
+    div,
+    a,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  </style>
 </head>
+
 <body class="wrapper" id="body" style="background-color: #295067;">
-    <div id="pageContent" class="pageContent">
+  <div id="pageContent" class="pageContent">
 
-        <div id="loadscreen" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('https://cdn.umperium.com/static/loadscreen-bg@3x.png.webp'); background-position: center top; background-size: cover; background-color: #295067;">
-            <div style="position: fixed; left:0; right: 0; bottom: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center">
-                <img src="https://cdn.umperium.com/static/infinite-spinner.svg"  alt="" style="position: absolute; width: 60px; margin-left: -30px; top: 48px; left: 50%;">
-                <img src="https://cdn.umperium.com/static/loadscreen-logo@3x.png.webp" style="width: 300px" alt="">
-            </div>
+    <div id="loadscreen"
+      style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url('https://cdn.umperium.com/static/loadscreen-bg@3x.png.webp'); background-position: center top; background-size: cover; background-color: #295067;">
+      <div
+        style="position: fixed; left:0; right: 0; bottom: 30px; display: flex; flex-direction: column; justify-content: center; align-items: center">
+        <img src="https://cdn.umperium.com/static/infinite-spinner.svg" alt=""
+          style="position: absolute; width: 60px; margin-left: -30px; top: 48px; left: 50%;">
+        <img src="https://cdn.umperium.com/static/loadscreen-logo@3x.png.webp" style="width: 300px" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div id="bottomMenu" style="display: none" class="bottomMenu">
+    <div class="bottomMenu--container">
+      <a class="bottomMenu--item bottomMenu--item--active" data-page="home" onclick="loadHomePage()">
+        <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-home-active.svg"
+          data-active="https://cdn.umperium.com/static/menu-icon-home-active.svg"
+          data-inactive="https://cdn.umperium.com/static/menu-icon-home-inactive.svg" alt="home">
+        <span class="bottomMenu--itemText" id="bottomMenu--itemText--home"></span>
+      </a>
+      <a class="bottomMenu--item" data-page="actives" onclick="loadActivesPage()">
+        <!-- <a class="bottomMenu--item" data-page="actives"> -->
+        <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-actives-inactive.svg"
+          data-active="https://cdn.umperium.com/static/menu-icon-actives-active.svg"
+          data-inactive="https://cdn.umperium.com/static/menu-icon-actives-inactive.svg" alt="actives">
+        <span class="bottomMenu--itemText" id="bottomMenu--itemText--actives"></span>
+      </a>
+      <a class="bottomMenu--item" onclick="loadFriendsPage()" data-page="friends">
+        <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-friends-inactive.svg"
+          data-active="https://cdn.umperium.com/static/menu-icon-friends-active.svg"
+          data-inactive="https://cdn.umperium.com/static/menu-icon-friends-inactive.svg" alt="friends">
+        <span class="bottomMenu--itemText" id="bottomMenu--itemText--friends"></span>
+      </a>
+      <a class="bottomMenu--item" onclick="loadBoostPage()" data-page="boost">
+        <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-boost-inactive.svg"
+          data-active="https://cdn.umperium.com/static/menu-icon-boost-active.svg"
+          data-inactive="https://cdn.umperium.com/static/menu-icon-boost-inactive.svg" alt="boost">
+        <span class="bottomMenu--itemText" id="bottomMenu--itemText--boost"></span>
+      </a>
+      <a class="bottomMenu--item" onclick="loadAirdropPage()" data-page="airdrop">
+        <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-airdrop-inactive.svg"
+          data-active="https://cdn.umperium.com/static/menu-icon-airdrop-active.svg"
+          data-inactive="https://cdn.umperium.com/static/menu-icon-airdrop-inactive.svg" alt="airdrop">
+        <span class="bottomMenu--itemText" id="bottomMenu--itemText--airdrop"></span>
+      </a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true"
+    data-bs-dismiss="toast" style="display: none">
+    <div class="d-flex">
+      <div class="toast-body" id="toast-body">
+
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+        aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="incomeModal--backdrop d-none" id="offlineModal--backdrop"></div>
+  <div class="incomeModal offlineModal offlineModal--hidden d-none" id="offlineModal">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h3 class="incomeModal--title" id="offlineModal--title"></h3>
+          <p class="incomeModal--cta" id="offlineModal--cta"></p>
+          <a class="btn btn-primary incomeModal--button" id="offlineModal--button" onclick="loadHomePage(true)"></a>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div id="bottomMenu" style="display: none" class="bottomMenu">
-        <div class="bottomMenu--container">
-            <a class="bottomMenu--item bottomMenu--item--active" data-page="home" onclick="loadHomePage()">
-                <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-home-active.svg" data-active="https://cdn.umperium.com/static/menu-icon-home-active.svg" data-inactive="https://cdn.umperium.com/static/menu-icon-home-inactive.svg" alt="home">
-                <span class="bottomMenu--itemText" id="bottomMenu--itemText--home"></span>
-            </a>
-            <a class="bottomMenu--item" data-page="actives" onclick="loadActivesPage()">
-                <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-actives-inactive.svg" data-active="https://cdn.umperium.com/static/menu-icon-actives-active.svg" data-inactive="https://cdn.umperium.com/static/menu-icon-actives-inactive.svg" alt="actives">
-                <span class="bottomMenu--itemText" id="bottomMenu--itemText--actives"></span>
-            </a>
-            <a class="bottomMenu--item" onclick="loadFriendsPage()" data-page="friends">
-                <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-friends-inactive.svg" data-active="https://cdn.umperium.com/static/menu-icon-friends-active.svg" data-inactive="https://cdn.umperium.com/static/menu-icon-friends-inactive.svg" alt="friends">
-                <span class="bottomMenu--itemText" id="bottomMenu--itemText--friends"></span>
-            </a>
-            <a class="bottomMenu--item" onclick="loadBoostPage()" data-page="boost">
-                <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-boost-inactive.svg" data-active="https://cdn.umperium.com/static/menu-icon-boost-active.svg" data-inactive="https://cdn.umperium.com/static/menu-icon-boost-inactive.svg" alt="boost">
-                <span class="bottomMenu--itemText" id="bottomMenu--itemText--boost"></span>
-            </a>
-            <a class="bottomMenu--item" onclick="loadAirdropPage()" data-page="airdrop">
-                <img class="bottomMenu--itemIcon" src="https://cdn.umperium.com/static/menu-icon-airdrop-inactive.svg" data-active="https://cdn.umperium.com/static/menu-icon-airdrop-active.svg" data-inactive="https://cdn.umperium.com/static/menu-icon-airdrop-inactive.svg" alt="airdrop">
-                <span class="bottomMenu--itemText" id="bottomMenu--itemText--airdrop"></span>
-            </a>
-        </div>
-    </div>
-
-    <div id="toast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-dismiss="toast" style="display: none">
-        <div class="d-flex">
-            <div class="toast-body" id="toast-body">
-
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
-
-    <div class="incomeModal--backdrop d-none" id="offlineModal--backdrop"></div>
-    <div class="incomeModal offlineModal offlineModal--hidden d-none" id="offlineModal">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <h3 class="incomeModal--title" id="offlineModal--title"></h3>
-                    <p class="incomeModal--cta" id="offlineModal--cta"></p>
-                    <a class="btn btn-primary incomeModal--button"  id="offlineModal--button" onclick="loadHomePage(true)"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="/scripts/preload.js?v=126"></script>
-    <script type="text/javascript">
-        preload();
-    </script>
-    <script type="text/javascript" src="/scripts/home.js?v=126" async></script>
-    <div class="d-none z-0">
-        <img src="https://cdn.umperium.com/static/menu-icon-home-inactive.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/menu-icon-actives-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/menu-icon-friends-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/menu-icon-boost-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/menu-icon-airdrop-active.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/tap-bg.svg" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-1@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-2@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-3@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-4@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-5@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-6@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/character-level-7@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-        <img src="https://cdn.umperium.com/static/wheel-of-fortune-spinner@3x.png.webp" alt="" width="1px" height="1px" style="position: fixed; top: 100%; left: 100%; opacity: 0">
-    </div>
+  <script type="text/javascript" src="/scripts/preload.js?v=128"></script>
+  <script type="text/javascript">
+    preload();
+  </script>
+  <script type="text/javascript" src="/scripts/home.js?v=128" async></script>
+  <div class="d-none z-0">
+    <img src="https://cdn.umperium.com/static/menu-icon-home-inactive.svg" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/menu-icon-actives-active.svg" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/menu-icon-friends-active.svg" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/menu-icon-boost-active.svg" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/menu-icon-airdrop-active.svg" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/tap-bg.svg" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-1@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-2@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-3@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-4@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-5@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-6@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/character-level-7@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+    <img src="https://cdn.umperium.com/static/wheel-of-fortune-spinner@3x.png.webp" alt="" width="1px" height="1px"
+      style="position: fixed; top: 100%; left: 100%; opacity: 0">
+  </div>
 </body>
+
 </html>
