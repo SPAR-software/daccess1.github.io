@@ -18,6 +18,11 @@ function tapEventListener(event) {
   }
 
   if (_player.current_energy >= (4 + _player.player_level.level)) {
+
+    if (navigator.vibrate) {
+      navigator.vibrate(20);
+    }
+
     _player.current_energy -= (4 + _player.player_level.level);
     energyCurrent.innerHTML = _player.current_energy;
 
