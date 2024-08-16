@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: umperium-dev-game-frontend
+  labels:
+    app: umperium-dev-game-frontend
+spec:
+  # replicas: 3
+  selector:
+    matchLabels:
+      app: umperium-dev-game-frontend
+  template:
+    metadata:
+      name: umperium-dev-game-frontend
+      labels:
+        app: umperium-dev-game-frontend
+    spec:
+      containers:
+        - name: umperium-dev-game-frontend
+          image: cr.yandex/crprep7mlarphamjggv1/dev/frontend/umperium-frontend:1.4.8
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 100m
+              memory: 50Mi
+            requests:
+              cpu: 50m
+              memory: 25Mi
+          ports:
+            - containerPort: 80
+              protocol: TCP
+      restartPolicy: Always
+      

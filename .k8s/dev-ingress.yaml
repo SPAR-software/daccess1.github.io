@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: umperium-dev-game-frontend
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "yc-clusterissuer"
+spec:
+  ingressClassName: "nginx"
+  tls:
+    - hosts:
+        - dev-game.umperium.com
+      secretName: umperium-dev-game-secret
+  rules:
+    - host: dev-game.umperium.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: umperium-dev-game-frontend
+                port:
+                  number: 80
