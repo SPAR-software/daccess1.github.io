@@ -12,9 +12,7 @@ document.addEventListener('loadActives', async () => {
         if (wrapper) {
           wrapper.classList.add('d-none');
         }
-      } catch (ex) {
-
-      }
+      } catch (ex) { }
 
       hideActivesModal();
       clearInterval(_actives_daily_interval);
@@ -22,10 +20,20 @@ document.addEventListener('loadActives', async () => {
     }
 
     if (_actives_daily_countdown) {
-      document.getElementById("dailyCard--timerCountdown").innerHTML = new Date(_actives_daily_countdown * 1000).toISOString().slice(11, 16);
+      document.getElementById("dailyCard--timerCountdown").innerHTML = formatCountdown(_actives_daily_countdown);
     }
   }, 1000);
 });
+
+// Форматирование оставшегося времени
+function formatCountdown(seconds) {
+  const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+  const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+  // const remainingSeconds = (seconds % 60).toString().padStart(2, '0');
+
+  // return `${hours}:${minutes}:${remainingSeconds}`;
+  return `${hours}:${minutes}`;
+}
 
 function showActivesModal(el) {
   resetOfflineTimeout();
