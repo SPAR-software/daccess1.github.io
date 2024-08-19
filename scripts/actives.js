@@ -2,36 +2,40 @@ var dailyBonus;
 
 document.addEventListener('loadActives', async () => {
   clearInterval(_actives_daily_interval);
-  _actives_daily_interval = setInterval(() => {
-    _actives_daily_countdown--;
 
-    if (_actives_daily_countdown <= 0) {
-      try {
-        const wrapper = document.getElementById('dailyCardWrapper');
+  const dailyData = await loadDaily();
+  if (dailyData && dailyData.countdown) {
+    const now = new Date();
+    const countdownEndTime = new Date(dailyData.countdown);
+    _actives_daily_countdown = Math.floor((countdownEndTime - now) / 1000);
 
-        if (wrapper) {
-          wrapper.classList.add('d-none');
-        }
-      } catch (ex) { }
+    _actives_daily_interval = setInterval(() => {
+      _actives_daily_countdown--;
 
-      hideActivesModal();
-      clearInterval(_actives_daily_interval);
-      return;
-    }
+      if (_actives_daily_countdown <= 0) {
+        try {
+          const wrapper = document.getElementById('dailyCardWrapper');
 
-    if (_actives_daily_countdown) {
-      document.getElementById("dailyCard--timerCountdown").innerHTML = formatCountdown(_actives_daily_countdown);
-    }
-  }, 1000);
+          if (wrapper) {
+            wrapper.classList.add('d-none');
+          }
+        } catch (ex) { }
+
+        hideActivesModal();
+        clearInterval(_actives_daily_interval);
+        return;
+      }
+
+      if (_actives_daily_countdown) {
+        document.getElementById("dailyCard--timerCountdown").innerHTML = formatCountdown(_actives_daily_countdown);
+      }
+    }, 1000);
+  }
 });
 
-// Форматирование оставшегося времени
 function formatCountdown(seconds) {
   const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
   const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
-  // const remainingSeconds = (seconds % 60).toString().padStart(2, '0');
-
-  // return `${hours}:${minutes}:${remainingSeconds}`;
   return `${hours}:${minutes}`;
 }
 
